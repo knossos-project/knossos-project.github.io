@@ -1,0 +1,52 @@
+@import '../libs/functions';
+@import '../libs/mixins';
+@import '../libs/vars';
+
+#header {
+	@extend .-small-font;
+	@extend .-uppercase;
+	transition: background-color 0.5s ease;
+	background: darken(rgba(_palette(footer1, bg), 0.5), 25);
+	color: _palette(header1, fg);
+	cursor: default;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: _misc(z-index-base) + 3;
+	text-align: right;
+
+	&.alt {
+		background: transparent;
+	}
+
+	> a {
+		@extend .-no-margin;
+		border-bottom: 2px solid transparent;
+		
+		&:not([href="#nav"]) {
+			display: none;
+
+			@include breakpoint(900px) {
+				display: inline-block;
+			}
+		}
+
+		&[href="#nav"] {
+			@include breakpoint(900px) {
+				display: none;
+			}
+		}
+
+		color: inherit;
+		transition: color 0.25s ease-in-out;
+		display: inline-block;
+		padding: 5px 1em;
+		text-decoration: none;
+
+		&:hover {
+			color: #fff;
+			border-bottom: 2px solid _palette(knossos-red);
+		}
+	}
+}

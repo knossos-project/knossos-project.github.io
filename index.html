@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<section id="banner" class="style -bright row">
+	<div class="col">
+		<h1>KNOSSOS</h1>
+		<p>3D Image Visualization and Annotation</p>
+
+		<ul class="actions">
+			<li><a
+					href="https://github.com/knossos-project/knossos/releases/download/v4.1.2/win64-Setup-Knossos.4.1.2.exe"
+					class="button -special icon fa-windows" data-button="download">Latest
+					Release ({{ site.data.knossos.version }}, 64bit)</a></li>
+			<li><a href="#GettingStartedSection" class="button -outline icon
+					fa-download">Download Dataset</a></li>
+		</ul>
+
+		<sub><a href="{{ site.data.knossos.release-url }}">Not your system?</a></sub>
+
+		<div class="browser-mockup">
+			<div class="chrome"></div>
+			<img src="{{ "images/skel.png" | prepend: site.baseurl }}" class="image fit" alt="KNOSSOS Application Screenshot" />
+		</div>
+	</div>
+</section>
+
+<section id="AboutSection" class="style1">
+	<div class="container">
+		{% capture about %}{% include about.md%}{% endcapture %}
+		{{ about | markdownify }}
+	</div>
+</section>
+
+<section id="FeaturesSection" class="style2 -no-padding">
+	{% include features.html %}
+</section>
+
+<section id="GettingStartedSection" class="style1">
+	<div class="container">
+		{% capture gettingstarted %}{% include getting-started.md %}{% endcapture %}
+		{{ gettingstarted | markdownify }}
+	</div>
+</section>
+
+<section id="TeamSection" class="style2">
+	<div class="container">
+		{% capture team %}{% include team.md %}{% endcapture %}
+		{{ team | markdownify }}
+	</div>
+</section>

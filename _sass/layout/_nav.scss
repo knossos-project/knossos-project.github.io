@@ -1,0 +1,36 @@
+#nav {
+	display: none;
+	
+	@media (max-width: 900px) {
+		display: block;
+		transform: translateX(20em);
+		transition: transform _duration(nav) ease, box-shadow _duration(nav) ease, visibility _duration(nav);
+		-webkit-overflow-scrolling: touch;
+		background: _palette(bg);
+		box-shadow: none;
+		height: 100%;
+		max-width: 80%;
+		padding: 3em 2em;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: 20em;
+		z-index: _misc(z-index-base) + 1;
+	}
+	
+	a {
+		color: _palette(header1, fg);
+		border: 0;
+		
+		&:hover {
+			color: _palette(fg-strong)
+		}
+	}
+
+	&.visible {
+		transform: translateX(0);
+		box-shadow: 0 0 1.5em 0 rgba(0,0,0,0.2);
+		visibility: visible;
+	}
+}

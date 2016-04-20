@@ -1,0 +1,33 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
+#footer {
+  color: _palette(footer1, fg);
+	background-color: _palette(footer1, bg);
+	padding-top: 2em;
+
+  a {
+    color: _palette(footer1, fg-light);
+    border: 0;
+
+    &:hover {
+      color: _palette(knossos-red);
+    }
+  }
+	
+	.-footer {
+		margin-top: 2em;
+		padding: 1em;
+		background: darken(rgba(_palette(footer1, bg), 0.5), 5);
+	}
+	
+	@include breakpoint($on-mobile) {
+	  background-color: _palette(footer1, bg);
+	  background-image: url("../images/MPI--logo.svg");
+	  background-position: -128px 50%;
+	  background-repeat: no-repeat;
+	  background-size: auto 150%;
+		
+	}
+}

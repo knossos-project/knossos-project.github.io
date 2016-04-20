@@ -1,0 +1,80 @@
+@import '../libs/functions';
+@import '../libs/mixins';
+@import '../libs/vars';
+
+
+ul + ul,
+ol + ol,
+ul + ol,
+ol + ul {
+	margin-top: _size(element-margin);
+}
+
+ul {
+	li ~ li {
+		margin-top: _size(element-margin) / 4;
+	}
+
+	ul, ol {
+		margin-top: .5em;
+		margin-left: _size(element-margin);
+	}
+
+	&.menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&.alt {
+		list-style: none;
+		//		padding-left: 0;
+
+		li {
+			//			border-top: solid _size(border-width) _palette(border);
+			border-top: 1px solid red;
+			//			padding: 0.5em 0;
+
+			&:first-child {
+				border-top: 0;
+				padding-top: 0;
+			}
+		}
+	}
+
+
+	&.vertical {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&.actions {
+		list-style: none;
+
+		li {
+			display: inline-block;
+			width: 100%;
+
+			@include breakpoint($on-mobile) {
+				width: auto;
+			}
+		}
+	}
+
+	//&.actions {
+	//	padding: 0;
+	//	margin: 0;
+	//	cursor: default;
+	//	list-style: none;
+
+	//	li {
+	//		@include breakpoint($on-mobile) {
+	//			display: inline-block;
+	//			width: auto;
+	//			
+	//			&:last-of-type {padding-right: 0;}
+	//		}
+	//	}
+	//}
+}

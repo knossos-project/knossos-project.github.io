@@ -1,0 +1,68 @@
+#FeaturesSection {
+	@for $i from 1 through 3 {
+    $j: 0.035 * $i;
+		
+		.col {
+			padding: _size(element-margin);
+		}
+		
+		@include breakpoint($on-desktop) {
+			.col:first-child {
+				padding-left: 256px;
+			};
+			
+			.col:last-child {
+				padding-right: 256px;
+			};
+		}
+
+		.row:nth-of-type(#{$i}) {
+			background-color: rgba(0,0,0, $j);
+			
+			@for $k from 1 through 2 {
+				.col:nth-of-type(#{$k}) {
+					background: rgba(0, 0,0 , $j * $k)
+				}
+			}
+		}
+	}
+}
+
+
+.style.-bright {
+	color: #fff;
+}
+
+.style1 {
+    background-color: #5B6E8C;
+}
+
+#TeamSection {
+	img {
+		border-radius: 50%;
+	}
+}
+
+.-no-margin {
+	margin: 0;
+}
+
+.-no-padding {
+	padding: 0;
+}
+
+.-align-left {
+  text-align: left;
+}
+
+.-align-center {
+  text-align: center;
+}
+
+.-align-right {
+  text-align: right;
+}
+
+.-small {
+	font-size: _font(small-font-size);
+}
