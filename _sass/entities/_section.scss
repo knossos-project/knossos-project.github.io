@@ -1,34 +1,34 @@
-.sidebar {
-	font-size: 0.8em;
-	flex-grow: .33;
-	padding-right: 1.65em;
-
-	a {
-		border: 0;
+.container {
+	width: 90%;
+	max-width: 960px;
+	
+	&--medium {
+		max-width: 720px;
+	}
+	
+	&--large {
+		max-width: 960px;
 	}
 }
 
-section {
-  padding: 4em 1em 1em;
-
-	header {
-		&.major {
-			text-align: center;
-
-			h2, h3, h4, h5, h6 {
-				border-bottom: solid 2px _palette(border-light);
-				display: inline-block;
-				padding-bottom: 1em;
-				position: relative;
-			}
-		}
+.content {
+	margin-top: 0;
+	padding-top: 4em;
+	padding-bottom: 4em;
+	
+	&--style1 {
+		background: #5B6E8C;
 	}
+}
 
-	.container {
-		width: 90%;
-		margin: 0 auto;
-		@include breakpoint($on-desktop) {
-			width: 80em;
-		}
-	}
+
+
+.page-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.page-wrapper__content {
+	flex: 1;
 }

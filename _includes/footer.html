@@ -1,23 +1,63 @@
-<footer id="footer">
-	<div class="row -align-center">
-		<div class="col">
-			<ul class="vertical -no-margin">
-				<li><a href="{{ "data/" | prepend: site.baseurl }}">Data Preparation</a></li>
+<footer class="footer">
+	<div class="container container--large -center row -align-center">
+		<div class="row__col">
+			<h6>Navigation</h6>
+			
+			<ul class="list--no-bullets">
+				<li><a href="{{ "data/" | prepend: site.baseurl }}">Home</a></li>
 
-				<li><a href="{{ "plugins/" | prepend: site.baseurl }}">KNOSSOS Plugins</a></li>
+				<li><a href="{{ "plugins/" | prepend: site.baseurl }}">Features</a></li>
+				
+				<li><a href="{{ "documentation/" | prepend: site.baseurl }}">Plugins</a></li>
 
-				<li><a href="{{ "documentation/" | prepend: site.baseurl }}">Documentation</a></li>
+				<li><a href="{{ "documentation/" | prepend: site.baseurl }}">Getting Started</a></li>
 
-				<li><a href="{{ site.data.knossos.github-url }}">Github <span class="icon fa-external-link"></span></a></li>
+				<li><a href="{{ site.data.knossos.github-url }}">About us</a></li>
 			</ul>
 		</div>
+		
+		<div class="row__col">
+			<h6>Documentation</h6>
+			
+			<ul class="list--no-bullets">
+				<li><a href="{{ "data/" | prepend: site.baseurl }}">Data Preparation</a></li>
 
-		<div class="col">
-			<a href="#banner" class="icon fa-chevron-up">Back to top</a>
+				<li><a href="{{ "plugins/" | prepend: site.baseurl }}">KNOSSOS Quickstart Guide</a></li>
+
+				<li><a href="{{ "documentation/" | prepend: site.baseurl }}">KNOSSOS Full Documentation</a></li>
+			</ul>
+		</div>
+		
+		<div class="row__col">
+			<h6>Contribute</h6>
+			
+			<ul class="list--no-bullets">
+				<li><a href="{{ "data/" | prepend: site.baseurl }}">GitHub Repository</a></li>
+				
+				<li><a href="{{ "data/" | prepend: site.baseurl }}">Issue Tracker</a></li>
+			</ul>
+		</div>
+		
+		<div class="row__col">
+			<h6>Connect</h6>
+			
+			<ul class="list--no-bullets">
+				<li><a href="{{ site.data.knossos.github-url }}">Max Planck Institute for Medical Research</a> (Heidelberg, Germany)</li>
+			
+				<li><a href="{{ site.data.knossos.github-url }}">Max Planck Institute for Neuroscience</a> (Munich, Germany)</li>
+			</ul>
+		</div>
+		
+		<div class="row__col -text-center">
+			<h6>Back to Top</h6>
+			
+			<div>
+				<a class="--icon --circle" href="#banner"><i class="fa fa-chevron-up"></i></a>
+			</div>
 		</div>
 	</div>
-
-	<div class="row -footer -align-left">
-		<p class="-no-margin">KNOSSOS is developed at <a href="https://www.mpimf-heidelberg.mpg.de/en">Max Planck Institute for Medical Research <span class="icon fa-external-link"></span></a> in Heidelberg, Germany.</p>
+	
+	<div class="footer__footer">
+		<p>KNOSSOS is developed at <a href="https://www.mpimf-heidelberg.mpg.de/en">Max Planck Institute for Medical Research <i class="fa fa-external-link"></i></a> in Heidelberg, Germany.</p>
 	</div>
 </footer>

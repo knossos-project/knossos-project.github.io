@@ -1,0 +1,60 @@
+.banner {
+	background: #353F4E;
+	max-height: 1080px;
+	overflow-y: hidden;
+	position: relative;
+	
+	&__content {
+		padding-top: 6em;
+	}
+
+	article + article {
+		margin-top: 4em;
+	}
+}
+
+
+.browser-mockup {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transition: box-shadow 0.2s ease-in-out;
+	max-width: 960px;
+	
+	&:hover {
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	}
+	
+	img {
+		display: block;
+	}
+	
+	&__chrome {
+		background-color: #e5e5e5;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		height: 2em;
+		line-height: 2em;
+		padding: 1em;
+		position: relative;
+		
+		&:before {
+			content: '\f077 \f078 \f00d';
+			letter-spacing: 0.65em;
+			left: 1em;
+			text-align: right;
+			text-indent: 0.75em;
+			color: #bbb;
+			cursor: default;
+			display: block;
+			font-family: FontAwesome;
+			font-size: 1.4rem;
+			font-style: normal;
+			font-weight: normal;
+			height: inherit;
+			line-height: inherit;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			width: 5em;
+		}
+	}
+}

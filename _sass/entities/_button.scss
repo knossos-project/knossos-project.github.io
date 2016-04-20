@@ -1,75 +1,20 @@
-@import '../libs/functions';
-@import '../libs/mixins';
-@import '../libs/vars';
-
 button,
 .button {
-	@extend .-ellipsis-overflow;
-	@extend .-uppercase;
-	@extend .-small-font;
-	background-color: _palette(button1, bg);
-	border-radius: _size(border-radius);
-	border: 0;
-	color: _palette(button1, fg-bold) !important;
-	cursor: pointer;
-	display: inline-block;
-	padding: .5em 2em;
-	text-align: center;
-	text-decoration: none;
-	transition: background-color _duration(hover) ease-in-out;
-	width: 100%;
-
-	@include breakpoint($on-palm) {
-		max-width: 100%;
-		width: auto;
-	}
-
+	background: #7DAEE8;
+    border: 1px solid #67a0e4;
+    border-radius: 81px;
+	padding: 12px 27px 11px 27px;
+    font-size: 1.3rem;
+	transition: box-shadow .4s ease-in-out, background .2s ease-in-out, border-color .2s ease-in-out;
+	
 	&:hover {
-		background-color: lighten(_palette(button1, bg), 10);
-		border: 0;
+		box-shadow: 0 0 16px rgba(#5C9CE5, .75);
+		background: #5C9CE5;
+		border-color: darken(#76AFF1, 10);
 	}
+}
 
-	&:active {
-		background-color: darken(_palette(button1, bg), 10);
-	}
-
-	&.-fit {
-		width: 100% !important;
-	}
-
-	&.-outline {
-		background-color: transparent;
-		box-shadow: inset 0 0 0 2px _palette(border);
-		color: _palette(fg-bold) !important;
-
-		&:hover {
-			background-color: _palette(button1, border-bg);
-		}
-
-		&:active {
-			background-color: _palette(button1, border2-bg);
-		}
-	}
-
-	&.-special {
-		background-color: _palette(button2, bg);
-		color: _palette(button2, fg-bold) !important;
-
-		&:hover {
-			background-color: lighten(_palette(button2, bg), 5);
-		}
-
-		&:active {
-			background-color: darken(_palette(button2, bg), 5);
-		}
-	}
-	//
-	//	&.disabled,
-	//	&:disabled {
-	//		background-color: _palette(fg) !important;
-	//		box-shadow: inset 0 -0.15em 0 0 rgba(0,0,0,0.15);
-	//		color: _palette(bg) !important;
-	//		cursor: default;
-	//		opacity: 0.25;
-	//	}
+a.button {
+	text-decoration: none;
+	color: #fff;
 }

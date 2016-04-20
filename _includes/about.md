@@ -1,6 +1,5 @@
 <header class="major">
-What is KNOSSOS
----------------
+<h2>What is KNOSSOS<span class="__icon"><i class="fa fa-home"></i></span></h2>
 </header>
 
 **KNOSSOS** visualizes large 3D (up to multiple terabyte) volume electron microscopic (e.g. Serial Block-Face EM) datasets by displaying slices. It supports skeleton and volume-based annotation modes, which can be extended by plugins written in Python.

@@ -1,10 +1,11 @@
-@media (min-width: 800px) {
+@media (min-width: $on-mobile) {
 	.row {
 		display: flex;
 		flex-direction: row;
 		
 		&__col { flex: 1 }
 		&__col--grow-0 { flex-grow: 0 }
+		
 		&__col + .row__col {
 			margin-top: 0;
 		}

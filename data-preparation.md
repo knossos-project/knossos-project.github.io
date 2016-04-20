@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Dataset Preparation
 permalink: /data/
 ---

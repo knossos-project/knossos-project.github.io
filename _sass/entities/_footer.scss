@@ -1,0 +1,31 @@
+.footer {
+	color: #e2eeff;
+	background-color: #202532;
+	padding-top: 4em;
+	font-size: 1.3rem;
+
+	a {
+		color: #a4b3cd;
+		border: 0;
+
+		&:hover {
+			color: #e44c65;
+		}
+	}
+	
+	&__footer {
+		font-size: 1.4rem;
+		margin-top: 3em;
+		padding: 1em;
+		background: darken(rgba(#202532, 0.5), 5);
+	}
+	
+	@include breakpoint($on-mobile) {
+		background-color: #202532;
+		background-image: url("../images/MPI--logo.svg");
+		background-position: -128px 50%;
+		background-repeat: no-repeat;
+		background-size: auto 150%;
+		
+	}
+}

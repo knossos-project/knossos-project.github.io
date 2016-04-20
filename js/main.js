@@ -88,8 +88,8 @@ function scrollTo(to, callback, duration) {
 (function() {
 	// Vars.
 	var	$body = document.querySelector('body'),
-	$banner = document.querySelector('#banner'),
-	$header = document.querySelector('#header');
+	$banner = document.querySelector('.banner'),
+	$nav = document.querySelector('.nav');
 
 	// Disable animations/transitions until everything's loaded.
 	$body.classList.add('is-loading');
@@ -97,9 +97,6 @@ function scrollTo(to, callback, duration) {
 	window.addEventListener('load', function() {
 		$body.classList.remove('is-loading');
 	});
-
-	if(!$banner)
-		$header.classList.remove("alt");
 
 	var locked = false;
 
@@ -111,8 +108,8 @@ function scrollTo(to, callback, duration) {
 		var height = $banner.getBoundingClientRect().height;
 		var top = $banner.getBoundingClientRect().top;
 
-		if(Math.abs(top) > height) { $header.classList.remove("alt"); }
-		if(Math.abs(top) < height) { $header.classList.add("alt"); }
+		if(Math.abs(top) < height) { $nav.classList.remove("nav--alt"); }
+		if(Math.abs(top) > height) { $nav.classList.add("nav--alt"); }
 
 		locked = false;
 	});
@@ -121,7 +118,7 @@ function scrollTo(to, callback, duration) {
 	// Change Download button.
 	var mac_release = "{{ site.data.knossos.mac-url }}";
 	var linux_release = "{{ site.data.knossos.linux-url }}";
-	var $button = document.querySelector("[data-button='download']");
+	var $button = document.querySelector("[data-button='download'] > i");
 
 	if(navigator.userAgent.indexOf("Macintosh") > -1) {
 		$button.classList.remove("fa-windows");
@@ -136,7 +133,7 @@ function scrollTo(to, callback, duration) {
 	}
 
 	// Nav.
-	var	$nav = document.querySelector('#nav');
+	/*var	$nav = document.querySelector('#nav');
 	var $navToggle = document.querySelector('a[href="#nav"]');
 
 	$nav.addEventListener("click touchend", function (event) {
@@ -157,6 +154,6 @@ function scrollTo(to, callback, duration) {
 	window.addEventListener("keydown", function(event) {
 		if(event.keyCode == 27)
 			$nav.classList.remove("visible");
-	});
+	});*/
 })();
 

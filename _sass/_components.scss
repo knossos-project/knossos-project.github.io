@@ -1,44 +1,14 @@
-.-ellipsis-overflow {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.-uppercase {
-	text-transform: uppercase;
-	letter-spacing: _font(letter-spacing-alt);
-	font-weight: _font(strong-font-weight);
-}
-
-.-no-margin {
-	margin: 0;
-}
-
-.-half-margin {
-	margin: _size(element-margin) / 2 !important;
-}
-
-.-margin {
-	margin: _size(element-margin) !important;
-}
-
-.-no-padding {
-	padding: 0;
-}
-
-.-small-font {
-	font-size: .8em;
-}
-
-.-large-font {
-	font-size: 1.2em;
-}
-
 .-text-center {
 	text-align: center;
 }
 
-.-align-center {
+.-center {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.-no-rhythm {
+	* + * {
+		margin-top: 0;
+	}
 }
