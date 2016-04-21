@@ -10,8 +10,23 @@ ul {
 	li {
 		display: block;
 		
-		@include breakpoint($on-notebook) {
-			display: inline-block;
+		.button {
+			display: block;
+		}
+	}
+	
+	li + li {
+		margin-top: 1em;
+	}
+	
+	@include breakpoint($on-mobile) {
+		li {
+		display: inline-block;
+			
+		}
+		
+		li + li {
+			margin-top: .5em;
 		}
 	}
 }
