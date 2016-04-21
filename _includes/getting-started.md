@@ -1,5 +1,5 @@
 <header class="major">
-Getting started<span class="__icon"><i class="fa fa-home"></i></span>
+Getting started<span class="__icon"><i class="fa fa-rocket"></i></span>
 ---------------------------------------------------------------------
 </header>
 

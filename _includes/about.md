@@ -1,5 +1,5 @@
 <header class="major">
-What is KNOSSOS<span class="__icon"><i class="fa fa-home"></i></span>
+What is KNOSSOS<span class="__icon"><i class="fa fa-question"></i></span>
 ---------------------------------------------------------------------
 </header>
 

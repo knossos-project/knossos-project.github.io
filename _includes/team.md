@@ -1,5 +1,5 @@
 <header class="major">
-About us<span class="__icon"><i class="fa fa-home"></i></span>
+About us<span class="__icon"><i class="fa fa-users"></i></span>
 ---------------------------------------------------------------------
 </header>
 
@@ -25,8 +25,8 @@ About us<span class="__icon"><i class="fa fa-home"></i></span>
 {% endfor %}
 
 
-Contact us
-==========
+### Contact us
+
 If you have any questions or suggestions regarding **KNOSSOS**, feel free to write us:
 
 <a href="mailto:knossos-team@mpimf-heidelberg.mpg.de" class="button special icon fa-envelope">knossos-team@mpimf-heidelberg.mpg.de</a>
