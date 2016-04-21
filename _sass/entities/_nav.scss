@@ -1,19 +1,25 @@
-.nav.nav--alt {
+.header-nav {
 	position: fixed;
-	top: 0;
+	top: -3em;
 	left: 0;
+	height: 3em;
 	width: 100%;
 	max-width: 100%;
 	padding: 0;
 	z-index: 2;
 	border-bottom: 1px solid rgba(#152E4C, .5);
-	left: 0;
-	transform: translateX(0);
+	transition: top .5s ease-in-out;
+	line-height: 3em;
+	text-align: center;
+	
+	&--visible {
+		top: 0;
+	}
+	
 	
 	a {
 		color: #d6dbe2;
 		border-bottom: 0;
-		padding: 1em 2em;
 		background: #4E92DF;
 		box-shadow: inset 0px -1px 0px 0px rgba(60,114,177,1);
 		transition: background .2s ease-in-out, color .2s ease-in-out;
@@ -35,10 +41,6 @@
 	max-width: 960px;
 	letter-spacing: 1px;
 	margin-bottom: 2em;
-	position: absolute;
-	width: 100%;
-	left: 50%;
-	transform: translateX(-50%);
 	
 	a {
 		color: #5E6A79;
