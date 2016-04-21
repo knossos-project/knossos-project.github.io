@@ -6,7 +6,7 @@ layout: default
 	{% include nav.html %}
 </nav>
 
-<header class="banner -no-rhythm -text-center">
+<header id="Banner" class="banner -no-rhythm -text-center">
 	<nav class="nav row -center">
 		{% include nav.html %}
 	</nav>
@@ -29,12 +29,14 @@ layout: default
 						<a href="#GettingStartedSection" class="button"><i class="fa fa-download"></i> Download Dataset</a>
 					</li>
 				</ul>
+				
+				<sub>Not your system? <a href="https://github.com/knossos-project/knossos/releases">Click here</a></sub>
 			</article>
 			
 			<article>
 				<div class="browser-mockup -center">
 					<div class="browser-mockup__chrome"></div>
-					<img src="http://placehold.it/1920x1080">
+					<img src="{{ "images/skel.png" | prepend: site.baseurl }}">
 				</div>
 			</article>
 		</div>
