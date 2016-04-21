@@ -26,7 +26,6 @@ Math.inOutQuintic = function(t, b, c, d) {
 
 
 function scrollTo(to, callback, duration) {
-	// because it's so fucking difficult to detect the scrolling element, just move them all
 	function move(amount) {
 		document.documentElement.scrollTop = amount;
 		document.body.parentNode.scrollTop = amount;
@@ -86,10 +85,9 @@ function scrollTo(to, callback, duration) {
 
 
 (function() {
-	// Vars.
 	var	$body = document.querySelector('body'),
-	$banner = document.querySelector('.banner'),
-	$nav = document.querySelector('.nav');
+		$banner = document.querySelector('.banner'),
+		$nav = document.querySelector('.header-nav');
 
 	// Disable animations/transitions until everything's loaded.
 	$body.classList.add('is-loading');
@@ -108,14 +106,18 @@ function scrollTo(to, callback, duration) {
 		var height = $banner.getBoundingClientRect().height;
 		var top = $banner.getBoundingClientRect().top;
 
-		if(Math.abs(top) < height) { $nav.classList.remove("nav--alt"); }
-		if(Math.abs(top) > height) { $nav.classList.add("nav--alt"); }
+		if(Math.abs(top) < height) {
+			$nav.classList.remove("header-nav--visible");
+		}
+		if(Math.abs(top) > height) {
+			$nav.classList.add("header-nav--visible");
+		}
 
 		locked = false;
 	});
 
 
-	// Change Download button.
+	// Change Download button depending on operating system.
 	var mac_release = "{{ site.data.knossos.mac-url }}";
 	var linux_release = "{{ site.data.knossos.linux-url }}";
 	var $button = document.querySelector("[data-button='download'] > i");
@@ -131,29 +133,5 @@ function scrollTo(to, callback, duration) {
 		$button.classList.add("fa-linux");
 		$button.setAttribute("href", linux_release);
 	}
-
-	// Nav.
-	/*var	$nav = document.querySelector('#nav');
-	var $navToggle = document.querySelector('a[href="#nav"]');
-
-	$nav.addEventListener("click touchend", function (event) {
-		//event.stopPropagation();
-	});
-
-	$header.addEventListener("click touchend", function(event) {
-		$nav.classList.remove("visible");
-		console.log("ok");
-	});
-
-	$navToggle.addEventListener("click", function(event) {
-		event.preventDefault();
-		//event.stopPropagation();
-		$nav.classList.toggle("visible");
-	});
-
-	window.addEventListener("keydown", function(event) {
-		if(event.keyCode == 27)
-			$nav.classList.remove("visible");
-	});*/
 })();
 
