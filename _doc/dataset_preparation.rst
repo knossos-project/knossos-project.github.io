@@ -1,4 +1,8 @@
-Preparing Your Dataset
-======================
+Dataset Preparation
+===================
 
-Use the ``knossos_cuber`` script found in the Data Preparation section for a tutorial on how to prepare your dataset. The following documentation is more concerned about the usage of the main program, KNOSSOS, and not about the creation of datasets.
+To be able to view your image datasets in **KNOSSOS**, they have to be converted into a **KNOSSOS**-readable format. You can use our `knossos_cuber` Python script for this. Right now the Python script is available from `our repository <https://github.com/knossos-project/knossos-python-tools/tree/master/knossos_cuber>`_.
+
+Look at the accompanying `README` file to learn how to use `knossos_cuber`.
+
+We plan to release this script on *PyPi* and as a standalone program soon.
