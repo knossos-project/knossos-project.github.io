@@ -1,6 +1,6 @@
 <header class="major">
-Getting Started
----------------
+Getting started<span class="__icon"><i class="fa fa-home"></i></span>
+---------------------------------------------------------------------
 </header>
 
 ### Download **KNOSSOS**
