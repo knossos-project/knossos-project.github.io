@@ -10,9 +10,17 @@ body {
 	color: #d6dbe2;
 }
 
-body * * + * {
-	margin-top: 1em;
+body * {
+	* + * {
+		margin-top: 1em;
+	}
+	
+	.row__col + .row__col {
+		margin-top: 0;
+	}
 }
+
+
 
 b, strong {
 	color: #fff;
@@ -42,7 +50,7 @@ h2 {
 		position: relative;
 		display: inline-block;
 		border-bottom: 2px solid rgba(0, 0, 0, 0.125);
-		padding: 0 48px .5em 4px;
+		padding: 0 24px .5em 4px;
 		margin-bottom: 2em;
 	
 		.__icon {
@@ -83,14 +91,9 @@ a {
 	&:hover {
 		border-color: #e44c65;
 	}
-	
-	&:not(.--circle).--icon {
-		i {
-			margin-right: .5em;
-		}
-	}
-	
-	&.--circle {
+}
+
+.circle-badge {
 		display: inline-block;
 		text-align: center;
 		width: 48px;
@@ -99,7 +102,6 @@ a {
 		background: rgba(0, 0, 0, 0.125);
 		line-height: 48px;
 	}
-}
 
 //body, input, select, textarea {
 //	color: _palette(fg);
