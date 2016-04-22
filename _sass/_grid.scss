@@ -16,6 +16,10 @@
 		}
 	}
 	
+	.row.row--start {
+		align-items: flex-start;
+	}
+	
 	.row.row--gutter {
 		.row__col + .row__col {
 			margin-left: 2em;
