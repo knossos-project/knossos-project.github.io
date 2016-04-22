@@ -33,6 +33,33 @@
 	}
 }
 
+.box {
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 5px;
+	padding: 1em 2em 2em;
+	font-size: 1.5rem;
+	
+	&--special {
+		border-color: #67a0e4;
+		background: #7DAEE8;
+		
+		h5 {
+			border-color: #67a0e4;
+		}
+	}
+	
+	&--purple {
+		background: #928CC7;
+		border-color: #7770BB;
+	}
+	
+	h5 {
+		display: block;
+		padding-bottom: 6px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	}
+}
+
 #FeaturesSection {
 	
 	.row + .row {
@@ -73,5 +100,16 @@
 				}
 			}
 		}
+	}
+}
+
+#DevelopmentSection {
+	background: #5B6E8C url("/ismages/bg.svg") repeat top left;
+	background-size: 256px 256px;
+}
+
+#GettingStartedSection {
+	.row + .row {
+		margin-top: 2em;
 	}
 }
