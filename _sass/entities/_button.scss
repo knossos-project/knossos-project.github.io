@@ -1,16 +1,32 @@
 button,
 .button {
 	background: #7DAEE8;
-    border: 1px solid #67a0e4;
-    border-radius: 81px;
+	border: 1px solid #67a0e4;
+	border-radius: 81px;
 	padding: 12px 27px 11px 27px;
-    font-size: 1.3rem;
+	font-size: 1.3rem;
 	transition: box-shadow .4s ease-in-out, background .2s ease-in-out, border-color .2s ease-in-out;
 	
 	&:hover {
 		box-shadow: 0 0 16px rgba(#5C9CE5, .75);
 		background: #5C9CE5;
 		border-color: darken(#76AFF1, 10);
+	}
+	
+	&--small {
+		padding: 6px 13px 5px 13px;
+		border-radius: 5px;
+	}
+	
+	&--purple {
+		background: #928CC7;
+		border-color: #7770BB;
+		
+		&:hover {
+			box-shadow: 0 0 16px rgba(#928CC7, .75);
+			border-color: #928CC7;
+			background: #928CC7;
+		}
 	}
 }
 
