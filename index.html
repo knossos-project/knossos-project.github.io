@@ -28,6 +28,10 @@ layout: default
 					<li>
 						<a href="#GettingStartedSection" class="button"><i class="fa fa-download"></i> Download Dataset</a>
 					</li>
+					
+					<li>
+						<a href="#DevelopmentSection" class="button button--purple"><i class="fa fa-puzzle-piece"></i> Get Help</a>
+					</li>
 				</ul>
 				
 				<sub>Not your system? <a href="https://github.com/knossos-project/knossos/releases">Click here</a></sub>
@@ -54,12 +58,56 @@ layout: default
 	{% include features.html %}
 </section>
 
+
+
+
+
+
 <section id="GettingStartedSection" class="content content--style1">
-	<div class="container--medium -center">
-		{% capture gettingstarted %}{% include getting-started.md %}{% endcapture %}
-		{{ gettingstarted | markdownify }}
+	{% include getting-started.html %}
+</section>
+
+
+
+
+
+
+<section id="DevelopmentSection" class="content content--style2">
+	<div class="container--large -center">
+		<header class="major">
+			<h2>Help & Discuss<span class="__icon"><i class="fa fa-lightbulb-o"></i></span></h2>
+		</header>
+		
+		<div class="row row--gutter">
+			<div class="row__col">
+				<div class="box box--special">
+					<h5>Exchange Ideas</h5>
+			
+					<p>You can enhance <strong>KNOSSOS&rsquo;</strong> annotation features by writing Python plugins, and we also provide a Python script that helps you to convert your existing image data into a <strong>KNOSSOS</strong>-readable format.</p>
+				</div>
+			</div>
+			
+			<div class="row__col">
+				<div class="box box--special">
+					<h5>Write a Plugin</h5>
+			
+					<p>You can enhance <strong>KNOSSOS&rsquo;</strong> annotation features by writing Python plugins, and we also provide a Python script that helps you to convert your existing image data into a <strong>KNOSSOS</strong>-readable format.</p>
+				</div>
+			</div>
+
+			<div class="row__col">
+				<div class="box box--purple">
+					<h5>Request a Feature</h5>
+
+					<p><strong>KNOSSOS</strong> is developed using the <em>Qt5</em> toolkit, and available on all major platforms. You can help the development of <strong>KNOSSOS</strong> by submitting bugs and other suggestions at <a href="https://github.com/knossos-project/knossos/issues">Github&rsquo;s issue tracker <i class="fa fa-external-link"></i></a> or by contacting us directly.</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
+
+
+
 
 <section id="TeamSection" class="content content--style2">
 	<div class="container--large -center">
