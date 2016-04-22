@@ -30,6 +30,9 @@ b, strong {
 h1, h2, h3, h4, h5, h6 {
 	color: #fff;
 	font-weight: 700;
+}
+
+h1, h2, h3, h4, h6 {
 	text-transform: uppercase;
 	letter-spacing: .5rem;
 }
@@ -39,12 +42,17 @@ h1 {
 	font-weight: 300;	
 }
 
-h2 {
-	
+h5 {
+	font-weight: 300;
+	font-size: 2.0rem;
 }
 
 .major {
 	text-align: center;
+	
+	&:not(:first-of-type) {
+		margin-top: 6em;
+	}
 	
 	h2 {
 		position: relative;
@@ -93,15 +101,45 @@ a {
 	}
 }
 
-.circle-badge {
-		display: inline-block;
-		text-align: center;
-		width: 48px;
-		height: 48px;
-		border-radius: 50%;
-		background: rgba(0, 0, 0, 0.125);
-		line-height: 48px;
+code {
+	background: rgba(0, 0, 0, 0.125);
+	border-radius: 3px;
+	font-family: monospace;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	color: rgba(#fff, .8);
+	font-size: 0.9em;
+	padding: .25em .5em;
+}
+
+.guilabel {
+	padding:0.1em 0.6em;
+	//border: 1px solid #ccc;
+	border: 1px solid #d6dbe2;
+	font-size: 1.2rem;
+	font-weight: 400;
+	background: #fff;
+	color:#333;
+	border-radius:3px;
+	//margin: 0 -3px 0 1px;
+	text-shadow: 0 1px 0 #fff;
+	white-space:nowrap;
+}
+
+.menuselection {
+	.guilabel:first-of-type {
+		margin: 0 -3px 0 1px;
 	}
+}
+
+.circle-badge {
+	display: inline-block;
+	text-align: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: rgba(0, 0, 0, 0.125);
+	line-height: 48px;
+}
 
 //body, input, select, textarea {
 //	color: _palette(fg);
