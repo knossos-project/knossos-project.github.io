@@ -5,10 +5,6 @@
 		
 		&__col { flex: 1 }
 		&__col--grow-0 { flex-grow: 0 }
-		
-		&__col + .row__col {
-			margin-top: 0;
-		}
 	
 		&__col--fixed-width {
 			flex-grow: 0;
