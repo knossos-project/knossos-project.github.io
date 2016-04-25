@@ -12,9 +12,12 @@
 		max-width: 960px;
 	}
 	
-	&--large-half {
-		width: 90%;
-		max-width: 480px;
+	
+	@include breakpoint($on-mobile) {
+		&--large-half {
+			width: 90%;
+			max-width: 480px;
+		}
 	}
 }
 
@@ -38,14 +41,11 @@
 	border-radius: 5px;
 	padding: 1em 2em 2em;
 	font-size: 1.5rem;
+	color: lighten(#d6dbe2, 10);
 	
 	&--special {
 		border-color: #67a0e4;
 		background: #7DAEE8;
-		
-		h5 {
-			border-color: #67a0e4;
-		}
 	}
 	
 	&--purple {
@@ -60,8 +60,16 @@
 	}
 }
 
-#FeaturesSection {
+.row__col.box + .row__col.box {
+	margin-top: 1em;
 	
+	@include breakpoint($on-mobile) {
+		margin-top: 0;
+	}
+}
+
+
+#FeaturesSection {
 	.row + .row {
 		margin-top: 0;
 	}
@@ -86,11 +94,7 @@
 	
 	@for $i from 1 through 3 {
     $j: 0.035 * ($i - 1);
-			
-		@include breakpoint($on-desktop) {
-			
-		}
-
+		
 		.row:nth-of-type(#{$i}) {
 			background-color: rgba(0,0,0, $j);
 			
@@ -103,13 +107,33 @@
 	}
 }
 
-#DevelopmentSection {
-	background: #5B6E8C url("/ismages/bg.svg") repeat top left;
-	background-size: 256px 256px;
-}
 
 #GettingStartedSection {
 	.row + .row {
 		margin-top: 2em;
+	}
+}
+
+.member-image {
+	@extend .-no-rhythm;
+}
+
+#TeamSection {
+	.member-image + .member-image {
+		margin-top: 2em;	
+	}
+	
+	.row {
+		margin-top: 2em;
+	}
+	
+	@include breakpoint($on-mobile) {
+		.member-image + .member-image {
+			margin-top: 0;
+		}
+		
+		.row + .row {
+			margin-top: 2em;
+		}
 	}
 }
