@@ -95,6 +95,11 @@ function scrollTo(to, callback, duration) {
 	window.addEventListener('load', function() {
 		$body.classList.remove('is-loading');
 	});
+	
+	var $nav__toggle = document.querySelector('[href="#nav"]');
+	$nav__toggle.addEventListener("click", function () {
+		$nav.classList.toggle("header-nav--expanded");
+	})
 
 	var locked = false;
 
@@ -132,6 +137,6 @@ function scrollTo(to, callback, duration) {
 		$button.classList.remove("fa-windows");
 		$button.classList.add("fa-linux");
 		$button.setAttribute("href", linux_release);
-	}
+	}	
 })();
 
