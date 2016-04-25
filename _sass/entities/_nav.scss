@@ -1,33 +1,59 @@
+.header-nav a {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left: .5em;
+	padding-right: .5em;
+	color: #d6dbe2;
+	border-bottom: 0;
+	background: #4E92DF;
+	box-shadow: inset 0px -1px 0px 0px rgba(60,114,177,1);
+	transition: background .2s ease-in-out, color .2s ease-in-out;
+	
+	&:hover {
+		background: #5496E0;
+		color: #fff;
+	}
+}
+
+.header-nav--expanded a {
+	height: auto !important;
+}
+
+.header-nav a:not(:first-of-type) {
+	height: 0;
+	
+	@include breakpoint($on-mobile) {
+		height: auto;
+	}
+}
+
+.header-nav a:first-of-type {
+	@include breakpoint($on-mobile) {
+		display: none;
+	}
+}
+
 .header-nav {
+	display: flex;
+	flex-direction: column;
 	position: fixed;
-	top: -3em;
 	left: 0;
-	height: 3em;
-	width: 100%;
-	max-width: 100%;
-	padding: 0;
 	z-index: 2;
+	width: 100%;
 	border-bottom: 1px solid rgba(#152E4C, .5);
 	transition: top .5s ease-in-out;
 	line-height: 3em;
 	text-align: center;
 	
-	&--visible {
-		top: 0;
+	@include breakpoint($on-mobile) {
+		flex-direction: row;
+		top: -3em;
+		height: 3em;
 	}
 	
-	
-	a {
-		color: #d6dbe2;
-		border-bottom: 0;
-		background: #4E92DF;
-		box-shadow: inset 0px -1px 0px 0px rgba(60,114,177,1);
-		transition: background .2s ease-in-out, color .2s ease-in-out;
-		
-		&:hover {
-			background: #5496E0;
-			color: #fff;
-		}
+	&--visible {
+		top: 0;
 	}
 	
 	a + a {
@@ -36,22 +62,26 @@
 }
 
 .nav {
-	font-size: 1.4rem;
-	padding: 2em;
-	max-width: 960px;
-	letter-spacing: 1px;
-	margin-bottom: 2em;
+	display: none;
 	
-	a {
-		color: #5E6A79;
-		border-bottom: 2px solid #3D4755;
-		padding-bottom: .5em;
-		transition: color .2s ease-in-out, border-color .2s ease-in-out;
+	@include breakpoint($on-mobile) {
+		display: flex;
+		font-size: 1.4rem;
+		padding: 2em;
+		max-width: 960px;
+		letter-spacing: 1px;
+		margin-bottom: 2em;
+	
+		a {
+			color: #5E6A79;
+			border-bottom: 2px solid #3D4755;
+			padding-bottom: .5em;
+			transition: color .2s ease-in-out, border-color .2s ease-in-out;
 		
-		&:hover, &.active {
-			color: #fff;
-			border-color: #5C9CE5;
+			&:hover, &.active {
+				color: #fff;
+				border-color: #5C9CE5;
+			}
 		}
-	}
-	
+	}	
 }
