@@ -8,27 +8,27 @@ About us<span class="__icon"><i class="fa fa-users"></i></span>
 {% for member in site.data.members %}
 {% assign loopindex = forloop.index | modulo: 2 %}
 {% if forloop.last == true %}
-<div class="row -text-center -no-rhythm">
-<div class="row__col">
+<div class="row -text-center">
+<div class="row__col member-image">
 <img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
-<h4 class="-no-margin">{{ member.name }}</h4>
+<h4>{{ member.name }}</h4>
 <p>{{ member.description }}</p>
 </div>
-<div class="row__col">
+<div class="row__col member-image">
 </div>
 </div>
 {% else %}
 {% if loopindex == 1 %}
-<div class="row -text-center -no-rhythm">
-<div class="row__col">
+<div class="row -text-center">
+<div class="row__col member-image">
 <img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
-<h4 class="-no-margin">{{ member.name }}</h4>
+<h4>{{ member.name }}</h4>
 <p>{{ member.description }}</p>
 </div>
 {% else %}
-<div class="row__col">
+<div class="row__col member-image">
 <img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
-<h4 class="-no-margin">{{ member.name }}</h4>
+<h4>{{ member.name }}</h4>
 <p>{{ member.description }}</p>
 </div>
 </div>
