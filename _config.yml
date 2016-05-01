@@ -18,6 +18,11 @@ kramdown:
 sass:
   style: :compressed
 
+include:
+ - _images
+ - _sources
+ - _static
+
 exclude:
   - "feed.xml"
   - "Makefile"
