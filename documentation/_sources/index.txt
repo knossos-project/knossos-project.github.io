@@ -16,7 +16,6 @@ We are currently in the process of transferring the documentation to a new forma
    dataset_preparation
    KNOSSOS_quickstart
    KNOSSOS_full_doc
-   glossary
    
 
 Indices and tables
