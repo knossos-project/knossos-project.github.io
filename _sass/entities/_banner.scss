@@ -40,8 +40,8 @@
 		position: relative;
 		
 		&:before {
-			content: '\f077 \f078 \f00d';
-			letter-spacing: 0.65em;
+			content: '\f00d \f078 \f077';
+			letter-spacing: .5em;
 			left: 1em;
 			text-align: right;
 			text-indent: 0.75em;
