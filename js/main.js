@@ -123,20 +123,19 @@ function scrollTo(to, callback, duration) {
 
 
 	// Change Download button depending on operating system.
-	var mac_release = "{{ site.data.knossos.mac-url }}";
-	var linux_release = "{{ site.data.knossos.linux-url }}";
-	var $button = document.querySelector("[data-button='download'] > i");
+	var $button_icon = document.querySelector("[data-button='download'] > i");
+	var $button = document.querySelector("[data-button='download']")
 
 	if(navigator.userAgent.indexOf("Macintosh") > -1) {
-		$button.classList.remove("fa-windows");
-		$button.classList.add("fa-apple");
-		$button.setAttribute("href", mac_release);
+		$button_icon.classList.remove("fa-windows");
+		$button_icon.classList.add("fa-apple");
+		$button.setAttribute("href", "{{ site.data.knossos.mac-url }}");
 	}
 
 	if(navigator.userAgent.indexOf("Linux") > -1) {
 		$button.classList.remove("fa-windows");
 		$button.classList.add("fa-linux");
-		$button.setAttribute("href", linux_release);
+		$button.setAttribute("href", "{{ site.data.knossos.linux-url }}");
 	}	
 })();
 
