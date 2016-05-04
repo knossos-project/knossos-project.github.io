@@ -70,7 +70,7 @@
 
 
 #FeaturesSection {
-	.row + .row {
+	.row + .row, .row__col + .row__col {
 		margin-top: 0;
 	}
 	
