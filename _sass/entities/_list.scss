@@ -19,14 +19,9 @@ ul {
 		margin-top: 1em;
 	}
 	
-	@include breakpoint($on-mobile) {
+	@include breakpoint($button-collapse) {
 		li {
-		display: inline-block;
-			
-		}
-		
-		li + li {
-			margin-top: .5em;
+			display: inline-block;
 		}
 	}
 }
