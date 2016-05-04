@@ -15,9 +15,13 @@ body * {
 		margin-top: 1em;
 	}
 	
-	.row__col + .row__col {
-		margin-top: 0;
+	@include breakpoint($grid-collapse) {
+		.row__col + .row__col {
+			margin-top: 0;
+		}
+		
 	}
+	
 }
 
 
