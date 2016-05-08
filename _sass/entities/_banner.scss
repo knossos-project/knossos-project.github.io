@@ -16,8 +16,13 @@
 		padding-top: 0;
 	}
 
-	article + article {
+	section + section {
 		margin-top: 4em;
+	}
+	
+	ul {
+		@extend .-center;
+		max-width: 540px;
 	}
 }
 
