@@ -19,7 +19,7 @@ Load a dataset into KNOSSOS.
 Create New Annotation (Ctrl+N)
 ------------------------------
 
-Clear the current annotation and starts a new one.
+Clear the current annotation and start a new one.
 
 
 Load Annotation... (Ctrl+O)
@@ -37,7 +37,7 @@ Shows a list of recently loaded annotation files.
 Save Annotation (Ctrl+S)
 ------------------------
 
-Save and override the current annotation file.
+Save current annotation file with default name.
 
 .. note::
     This creates a `k.zip` file. #TODO
@@ -46,7 +46,7 @@ Save and override the current annotation file.
 Save Annotation As...
 --------------------
 
-Save annotation into new file.
+Save annotation, specifying a name.
 
 
 Export to NML...
@@ -55,14 +55,7 @@ Export to NML...
 Export the current annotation into NML.
 
 .. note::
-    This is a compatibility format for other annotation software. #TODO
-
-
-Quit
-----
-
-Quits KNOSSOS.
-
+    This is a compatibility format that can be loaded into WebKnossos.
 
 
 Action
@@ -83,28 +76,28 @@ Mark the current node as a branch point.
 Pop Branch Node (J)
 -------------------
 
-Move to the last branch point, and remove it from the list of branch points.
+Move to the last branch point, and remove its branch mark.
 
 Clear Skeleton
 --------------
 
-Remove the current skeleton.
+Delete the current skeleton.
 
 
 
 Action (Tracing Advanced)
 =========================
 
-Contains following actions: Turn segments {}, New Tree, Push Branch Node, Pop Branch Node, Clear Skeleton.
+Contains following actions: Turn segments {off once|off|on}, New Tree, Push Branch Node, Pop Branch Node, Clear Skeleton.
 
 Turn segments {off once|off|on} (A)
 -----------------------------------
 
 This action entry controls how KNOSSOS places segments between nodes. You can toggle between the following 3 options using `A`:
 
-* `off once`: The next placed node will not be connected to the previous one. After this action, all following nodes will be connected again (like `Turn segments on`)
-* `off`: Do not connect any nodes.
-* `on`: Subsequent nodes will be connected with each other.
+* `off once`: The next placed node will not be connected to the previous one. This affects only the next node. All following nodes will be connected again.
+* `off`: Never connect nodes to their predecessor.
+* `on`: Always connect nodes to their predecessor.
 
 
 New Tree (C)
@@ -122,7 +115,7 @@ Contains these actions: New Tree, Push Branch Node, Pop Branch Node, Clear Skele
 Clear Merge List
 ----------------
 
-Removes all segmentation objects.
+Delete all segmentation objects.
 
 
 Action (Segmentation Merge)
@@ -154,12 +147,12 @@ Move to the active node.
 Move To Next Node (X)
 ---------------------
 
-Move to the node with the next-higher ID.
+Move to next connected node. With this you can iterate all nodes that are directly or indirectly connected to the current node.
 
 Move to Previous Node (Shift+X)
 -------------------------------
 
-Move to the node with the next-lower ID.
+Move back to previous node if moved forward with X before.
 
 Move To Next Tree (Z)
 ---------------------
@@ -190,12 +183,12 @@ Next Comment (N)
 Moves to the next node whose comment contains the search string.
 
 .. note::
-    Traversal uses depth-first search.
+    Results appear in depth-first search order.
 
 Previously found Comment (P)
 ----------------------------
 
-Moves to the previous node whose comment contains the search string. #TODO This action can only be done after `Next Comment` has been used.
+Moves back to previous node whose comment contains the search string. 
 
 Comment Shortcut (F1-F10)
 ------------------------
@@ -283,16 +276,15 @@ Opens a window containing information about the current KNOSSOS version.
 KNOSSOS Toolbar
 ***************
 
-1. This drop-down menu selects KNOSSOS’ work mode. You can choose between different work modes depending on your annotation task. This will change the available items in the Action menu, and the way KNOSSOS annotates data. #TODO
+1. This drop-down menu selects KNOSSOS’ work mode. You can choose between multiple work modes depending on your annotation task. Each work mode offers different actions in the Action menu and solves different annotation problems. #TODO
 2. Coordinates. Specify X, Y and Z coordinates of the current position.
-2a. Copy the current coordinates to the clip board. This will add a `,` character between each coordinate.
-2b. Paste coordinates from the clipboard. This will automatically move to the new position.
+2a. Copy the current coordinates to the clip board.
+2b. Paste coordinates from the clipboard. This will automatically move to the new position. Pasted coordinates should be three separate numbers, e.g. “1500, 1000, 1000”.
 3. Open Task Management window.
 4. Open Dataset Options window.
 5. Open Appearance Settings window.
 6. Open Annotation window.
 7. Open Python interpreter.
 8. Open Snapshot Tool window.
-9. Reset VP Position. Resets each viewport’s size and position. Floating viewports will be docked again.
-10. `Loader pending:`. Displays the amount of dataset cubes that are queued for loading.
-
+9. Reset VP Position. Resets all viewports’ size and position. Floating viewports will be docked again.
+10. `Loader pending:`. KNOSSOS pre-loads dataset cubes at the current position and its surrounds. This label displays the number of remaining cubes queued for loading.
