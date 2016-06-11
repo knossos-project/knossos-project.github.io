@@ -304,7 +304,7 @@ It is divided into three tabs `Skeleton`, `Segmentation` and `Comments`.
 Skeleton Tab
 ------------
 
-The skeleton tab contains two tables giving you an overview of skeleton trees and nodes in your current annotation.
+The skeleton tab contains two tables giving you an overview of skeleton trees and nodes in your current annotation. This is only relevant for you if you annotate your data by skeletonization. The `Segmentation Tab` covers annotation by volume segmentation.
 
 .. image:: images/doc_treeview.png
 
@@ -390,3 +390,33 @@ The collapsible Commands section contains further operations that are needed les
 
 
 
+Segmentation Tab
+----------------
+The segmentation tab contains a table of segmentation objects in your current annotation. This is only relevant for you if you annotate your data by volume segmentation. The `Skeleton Tab` covers annotation by skeletonization.
+
+.. note:: The Segmentation Tab is only available if you have checked “Load segmentation overlay” when loading a dataset before (File → Choose Dataset). If you want to enable segmentation, simply reload the dataset with a tick in that checkbox.
+
+* The checkbox “Show only selected objects” lets you hide not-selected objects and subobjects in the viewports. This is useful if you want to concentrate on certain objects without being disturbed by surrounding annotations.
+
+* A brush radius spin box lets you resize the brush. Alternatively it can be changed via Shift+mouse-scroll.
+
+* The mutually exclusive 2D and 3D buttons determine wether the brush works in the plane or in 3D.
+
+* The objects table can be filtered by category with the dropdown list in the upper left.
+
+* Just like in the Skeleton Tab a comment filter field is available. Regular expressions can be used on this filter by ticking the “regex” checkbox. Regular expressions allow you to formulate more complex filter conditions. For example “[0-9]” would list all elements whose comment contains a number.
+
+* At the bottom the number of objects and subobjects can be seen. Note that the number of subobjects can be smaller than the total number of subobjects in objects since multiple objects can contain the same subobject.
+
+* The “hovered raw segmentation” label displays the segmentation dataset ID underneath the mouse pointer.
+
+Objects table
+"""""""""""""
+The objects table shows all segmentation objects. It contains following columns:
+* Color: the objects color. Can be changed by double-clicking on it.
+* Object ID: A unique ID within the annotation. Not editable.
+* Lock: Normally, when merging multiple objects, they are moved together and the original objects are lost. Locked objects on the other hand are kept and the merge result is stored in a separate merge-object. This way accidental merges can be easily undone by deleting the merge-object.
+* Category: The object’s category describes the type of data it represents. It can be either selected from the existing dropdown list, or you can directly define a new category here. This new category will then be added to the dropdown.
+* Comment: While categories describe general object types, comments can be any information on single objects.
+* \#: The number of subobjects contained in the object. Objects with more than one subobject are merge results.
+* Subobject IDs: The list of subobjects contained in the object. Due to space reasons only the 10 first subobjects are listed.
