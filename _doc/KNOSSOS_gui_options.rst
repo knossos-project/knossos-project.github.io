@@ -420,3 +420,16 @@ The objects table shows all segmentation objects. It contains following columns:
 * Comment: While categories describe general object types, comments can be any information on single objects.
 * \#: The number of subobjects contained in the object. Objects with more than one subobject are merge results.
 * Subobject IDs: The list of subobjects contained in the object. Due to space reasons only the 10 first subobjects are listed.
+
+Comments Tab
+^^^^^^^^^^^^
+
+Here you can define your comment shortcuts and select distinguishing  node colors and radii for them.
+
+If you want to activate color and radius highlighting, you have to check the options “Use custom comment color” and “Use custom comment radius”.
+
+Shortcuts can be placed on F1-F10. When pressing a comment shortcut during skeletonization, the currently active node will receive the corresponding comment. 
+If the current workmode is “Segmentation Merge” or “Segmentation Paint”, the comment is placed on the selected object instead. Color and node highlighting do not affect segmentation objects.
+
+* The shortcuts will be saved for you on closing KNOSSOS.
+* Note that if a comment matches several substrings, only the first substring will be considered for highlighting. So place your most important substring into the first text box, the second most important into the second text box, and so on.
