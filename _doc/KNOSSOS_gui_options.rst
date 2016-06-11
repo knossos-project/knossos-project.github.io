@@ -288,3 +288,105 @@ KNOSSOS Toolbar
 8. Open Snapshot Tool window.
 9. Reset VP Position. Resets all viewports’ size and position. Floating viewports will be docked again.
 10. `Loader pending:`. KNOSSOS pre-loads dataset cubes at the current position and its surrounds. This label displays the number of remaining cubes queued for loading.
+
+
+KNOSSOS Windows
+***************
+
+Annotation Window
+=================
+
+Under :guilabel:`Windows` :guilabel:`Annotation Window` you will find the central window for viewing and managing your annotation.
+
+It is divided into three tabs `Skeleton`, `Segmentation` and `Comments`.
+
+
+Skeleton Tab
+------------
+
+The skeleton tab contains two tables giving you an overview of skeleton trees and nodes in your current annotation.
+
+.. image:: images/doc_treeview.png
+
+Elements that you select in the tables are also selected in the viewports and vice versa. Additionally, the active tree and active node — which mark the position where annotation continues — are indicated with a green arrow at the beginning of the row. This should help you to orient yourself.
+
+If you want to focus on certain parts of your annotation, you can filter both tables by comments specified in the text fields over them. These also support regular expressions through the “regex” checkbox on their right. Regular expressions allow you to formulate more complex filter conditions. For example “[0-9]” would list all elements whose comment contains a number.
+
+.. note:: Double-click on the divider in between the tables to change wether they are placed next to or over each other.
+
+Below are more detailed explanations of the respective tables.
+
+Tree Table
+""""""""""
+The tree table has following columns:
+* ID: A unique ID within this annotation. Not editable.
+* Tree color: Double-click to change.
+* Show: Toggle visibility of the tree in the viewports.
+* \#: The number of nodes in this tree. Not editable.
+* Comment: A place for a note. Trees can be filtered by this field.
+
+Right-clicking a selected row or a set of selected rows opens a context menu with following entries:
+* Jump to first node: Jumps to the first node created in this tree.
+* Move selected nodes to this tree: You can alternatively drag and drop selected nodes from the node table onto a tree in the tree table.
+* Merge trees: Merges all nodes in the selected trees into one, deleting the original trees. Needs at least two selected trees.
+* Set comment for trees: Let’s you write a common comment for all selected trees.
+* Show selected trees: Makes the trees visible in the viewports.
+* Hide selected trees: Hides the trees in the viewport.
+* Restore default color: Restores the selected trees’ default color based on its ID.
+* Delete tree(s): Deletes all selected trees and their nodes (a confirmation request will show up). Pressing DEL achieves the same.
+
+
+Node Table
+""""""""""
+The node table has following columns:
+* ID: A unique ID within this annotation. Not editable.
+* x, y, z: The node’s coordinates. Can be edited to specify a detailed position. But moving inside the viewport through middle-click and hold is generally easier.
+* Radius: The node radius. Bigger nodes are easier to see. #TODO explain what they can be used for.
+* Comment: A place for a note. Nodes can be filtered by this field.
+
+Right-clicking a selected row or a set of selected rows opens a context menu with following entries:
+* Jump to node: Jump to the location of the node. You can also simply press S in a viewport to jump to the active node.
+* Extract connected component: Moves all nodes directly or indirectly connected to this node into a new tree.
+* Link/Unlink nodes: Create or remove the connection between the two selected nodes. Alternatively, you can Alt+left-click a node inside a viewport to link or unlink it with the active node.
+* Set comment for nodes: Let’s you write a common comment for all selected nodes.
+* Set radius for nodes: Let’s you choose a common radius for all selected nodes.
+* Delete node(s): Deletes all selected nodes (a confirmation request will show up). Pressing DEL achieves the same.
+
+.. note:: 
+Extracting a connected component can be used if you traced a very long branch and afterwards realize that it does not belong to your cell. Of course you could delete every single node of the branch one at a time. But it is easier to delete only the first connecting segment at the branchpoint, split the two trees with this function and delete the whole branch tree at once.
+
+Display Options
+^^^^^^^^^^^^^^^
+The Display options is a collapsible section that offers more complex filtering additionally to comment filtering. These options have precedence over comment filtering, i.e. if a node satisfies the comment filter but not the display option, it is not shown.
+
+Following filter flags are available:
+* in selected tree: Accepts all nodes that are in a selected tree.
+* selected: Accepts only nodes that are selected themselves.
+* branch node: Accepts nodes with a branch mark. #TODO see branch points
+* comment node: Accepts nodes that have a comment.
+* synapse node: Accepts nodes that are part of a synapse.
+
+The dropdown list on the left lets you specify if nodes should only be shown if they match all ticked critera or if it is enough to match at least one.
+
+The image below shows some filtering examples.
+* In (A) nodes are shown whose comment contains “First”.
+* In (B) only nodes are shown that are branch nodes *and* have a comment.
+* In (C) nodes are shown that are branch nodes *and/or* have a comment.
+* In (D) nodes are shown that are branch nodes *and* whose comment contains “Last”. But since the only node that contains “Last” is not a branch node, it is not shown.
+
+.. image:: images/doc_displayoptions.png
+
+Commands
+^^^^^^^^
+
+The collapsible Commands section contains further operations that are needed less frequently:
+
+* Default node radius: Lets you define a node radius for all subsequent nodes. The KNOSSOS default is 1.5px.
+* Locking: Sometimes you might want to maintain a maximum distance between nodes while tracing to have a consistent accuracy throughout your annotation. For this, ticking “Lock to active node” prevents you from placing nodes farther away from the last node than the specified “Locking radius”.
+	* Depending on your annotation task you might also want to cluster your annotation around certain interesting centers. In this case you don’t want the locking position to move to every new node but to stay at the center. To achieve this, you can require that locking should only take place on nodes with certain comments. Then place a node with that comment at the cluster center. As soon as it is active, locking will stay there as long as no other node containing that same comment becomes active.
+	* “Disable current locking” releases locking on the current position. But the next active node can still be locked. To turn off locking entirely, you need to uncheck “Lock to active node”.
+
+.. image:: images/doc_locking.png #show locking to active node and locking to active node with comment
+
+
+
