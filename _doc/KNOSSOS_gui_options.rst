@@ -433,3 +433,29 @@ If the current workmode is “Segmentation Merge” or “Segmentation Paint”,
 
 * The shortcuts will be saved for you on closing KNOSSOS.
 * Note that if a comment matches several substrings, only the first substring will be considered for highlighting. So place your most important substring into the first text box, the second most important into the second text box, and so on.
+
+
+Load Dataset Window
+===================
+.. image:: the dataset load widget
+The Load Dataset Window lets you load an image dataset for annotation. You can select a dataset or add a new one to the list with the “…” button and then press “Load Dataset” at the bottom of the window to load it.
+With the “×” button in each list row you can let KNOSSOS forget a dataset.
+
+The selected dataset’s details are shown below the list. If KNOSSOS cannot find a dataset in the provided path, it will show no details. At the moment a dataset can have following information:
+
+* indication if it is a local dataset or a remote one loaded over network.
+* Name: The dataset’s experiment name
+* URL: Available for remote datasets
+* Boundary: The size in dataset pixels
+* Compression Ratio: Ratio of jpeg compression.
+* Cube Edge Length: Edge length of the dataset’s cubes
+* Magnification: The magnification that will be loadad. The dataset can contain more magnifications.
+* Scale: nm per dataset pixel
+
+Below the dataset are additional settings that tell KNOSSOS, how the dataset should be loaded.
+
+* “FOV per dimension” describes the field of view in pixels.
+
+* The “load segmentation overlay” checkbox determines if segmentation data is loaded. This checkbox must be enabled if you want to use segmentation features.
+
+Note that enlarging field of view and enabling segmentation overlay increase memory consumption.
