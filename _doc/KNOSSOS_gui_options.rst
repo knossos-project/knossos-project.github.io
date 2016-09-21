@@ -422,7 +422,7 @@ The objects table shows all segmentation objects. It contains following columns:
 * Subobject IDs: The list of subobjects contained in the object. Due to space reasons only the 10 first subobjects are listed.
 
 Comments Tab
-^^^^^^^^^^^^
+------------
 
 Here you can define your comment shortcuts and select distinguishing  node colors and radii for them.
 
@@ -459,3 +459,94 @@ Below the dataset are additional settings that tell KNOSSOS, how the dataset sho
 * The “load segmentation overlay” checkbox determines if segmentation data is loaded. This checkbox must be enabled if you want to use segmentation features.
 
 Note that enlarging field of view and enabling segmentation overlay increase memory consumption.
+
+
+Preferences Window
+==================
+The appearance settings let you configure what should be displayed in the viewports. You can customize display of skeleton trees and nodes, of dataset and segmentation, and lastly of vewport decorations.
+
+Trees Tab
+---------
+..image:: trees tab
+
+* “Highlight active tree”: Renders the active tree in red.
+* “Highlight intersections”: Shows black markers on trees at plane intersections.
+* “Enable light effects”: Shows light effects on the skeleton. If turned on the segments’ orientation is easier recognizable but the original tree color becomes harder to distinguish.
+* “Use custom tree colors”: Lets you choose you own color lookup table for the trees. Color assignment is based on the tree ID.
+* Show skeleton in Ortho VPs: Lets you toggle skeleton rendering in the viewport planes.
+* Show skeleton in 3D VP: Lets you toggle skeleton rendering in the 3D viewport.
+* “Show whole skeleton”: Shows all trees in the viewports. This setting takes only effect in viewports that have skeleton rendering enabled through the “Show skeleton” checkboxes above.
+* “Show only selected trees”: Shows only selected trees in the viewports. This is useful if you do not want to clutter your view with uninteresting trees. Select trees that you wish to see in the trees table under Windows→Annotation Window→Skeleton. Note, that the active tree is always visible.
+This setting takes only effect in viewports that have skeleton rendering enabled through the “Show skeleton” checkboxes above.
+* “Depth cutoff”: Lets you adjust how far in the orthogonal direction of each viewport the skeleton is still visible. E.g. with a depth cutoff of 5 you can see nodes in the range of your current z coordinate ±5.
+* “Skeleton rendering quality”: The skeleton rendering quality is a performance setting.
+	- “Tubes & spheres” renders the skeleton as a real 3D structure, in which segments are tubes and nodes are spheres.
+	- “Lines & points” renders the skeleton less performance costly as lines for segments and points for nodes.
+	- “Switch dynamically” makes KNOSSOS switch dynamically between the two options based on the zoom level: If zoomed out far, 3D structures are most likely not distinguishable anyway, so “Lines & points” is activated. If zoomed close enough “Tubes & spheres” are rendered.
+The “Tubes & spheres” setting becomes more costly with bigger skeletons to render. So it can also help to “Show only selected trees”.
+
+Nodes Tab
+---------
+..image:: nodes tab
+
+* “Show node IDs”: Display node IDs inside the viewports for easier orientation.
+* “Show node comments”: Display node comments inside the plane viewports.
+* “Override node radius”: Temporarily override all node radii with this value. This does not change the actual radius values. It is useful to override node radii with a larger value for example whenever you zoom out very far and would still like to see the nodes.
+* “Edge : Node radius ratio”: Set the edge thickness depending on the attached node’s radius.
+
+Property Highlighting
+"""""""""""""""""""""
+This section lets you visualize numerical node properties by radius and color highlighting.
+
+* For radius highlighting: Select a property and a scale factor. The radius of nodes with selected property will be overridden with their respective property value times the scale factor.
+
+* For color highlighting: Select a property and the value range that should be visualized. Finally choose a color lookup table (LUT) that continuosly maps the property values to a color. KNOSSOS is compatible with ImageJ binary LUTs.
+
+Dataset & Segmentation Tab
+--------------------------
+..image:: dataset & segmentation tab
+
+* “Enable linear filtering”: Apply smoothing filter to dataset and segmentation overlay.
+* “Use own dataset colors”: Load a custom color lookup table (LUT) for the dataset. KNOSSOS is compatible with ImageJ binary LUTs.
+Bias and range delta can be used in conjunction to adjust the dataset contrast:
+* “Bias”: specifies the smallest value that will be mapped to black, effectively shifting the color range. The default value is a bias of zero.
+* “Range delta”: determines the displayed color range. The default value is a range of 255.
+* “Overlay opacity”: Adjust the segmentation overlay opacity. If you just want to hide overlay temporarily, you can also simply hold the space bar.
+* “Show volume in 3D viewport”: Replaces the view in the 3d viewport with a segmentation rendering. While the default view shows the viewport planes and skeletonization, the volume rendering only shows segmentation data.
+
+Viewports Tab
+-------------
+..image:: viewports tab
+
+On the left side:
+* “Show viewport decorations”: Shows or hides the buttons attached to each viewport.
+* “Draw intersection crosshairs”: Shows or hides the intersection lines of the three orthogonal plane viewports. Each intersection line has the color of the corresponding viewport’s border
+* “Add viewport with arbitrary view”: This is an experimental feature. It shows a 4th plane viewport that can have arbitrary orientation. When tracing in this viewport it automatically orients itself orthogonally to the tracing direction. This should improve the annotation quality because the view follows the neuron structure. The orientation can also be manually rotated around its z-axis with K and Shift+K and around its y-axis with L and Shift+L. The rotation can be reset in the menu at the upper right corner of the viewport.
+
+On the right side:
+* “Viewport planes”: Decide which of the orthogonal viewport planes should be seen inside the 3d viewport. To show the arbitrary plane, check “Add viewport with arbitrary view” on the left first.
+* “Dataset boundary unit”: Choose in which unit dataset boundaries should be shown
+* “Rotation around”: Select the rotation center. You can rotate the 3d view by dragging with the right mouse button.
+
+Autosave Tab
+------------
+..image:: autosave tab
+
+Here you can turn on autosave to automatically save your annotation periodically.
+
+* “Auto-increment filename” is especially useful if you do not want to overwrite on each autosave. This allows you to retrieve previous versions of your annotation, e.g. in case of mistakes in later versions.
+* The default location for annotation files is shown at the bottom. This is where your annotation is stored if it was not saved to another location before.
+
+Navigation Tab
+--------------
+..image:: navigation tab
+
+* “Movement area”: Specify custom boundaries to restrict movement and annotation to that specific area of interest to you.
+* “Keyboard movement”: Specify step size and speed with which you browse through the dataset.
+	- “Movement speed”: The browsing speed in slices/s affects movement with arrow keys, as well as key pairs D/F and E/R.
+	- “Jump frames (D, F)”: Choose how many frames to _jump_ through the dataset when pressing D (backward) or F (forward).
+	- “Walk frames (E, R)”: Choose how many frames to _walk_ through the dataset when pressing E (backward) or R (forward). As opposed to jumping, walking browses smoothly through the frames on the way instead of skipping them.
+* “Recentering behaviour”: Customize how the camera should recenter while tracing.
+	* “Recenter on new node (default)”: After placing a node the orthogonal viewports automatically focus on it.
+	* “No recentering”: The camera never moves on its own.
+	* “Additional movement in tracing direction”: The camera does not focus on newly placed nodes but moves ahead in tracing direction a defined amount of steps. Here, the tracing direction is defined by the vector between the last two nodes.
