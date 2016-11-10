@@ -1,7 +1,7 @@
 Dataset Preparation
 ===================
 
-To be able to view your image datasets in **KNOSSOS**, they have to be converted into a **KNOSSOS**-readable format. You can use our `knossos_cuber` Python script for this. Right now the Python script is available from `our repository <https://github.com/knossos-project/knossos-python-tools/tree/master/knossos_cuber>`_.
+To be able to view your image datasets in **KNOSSOS**, they have to be converted into a **KNOSSOS**-readable format. You can use our `knossos_cuber` Python script for this. Right now the Python script is available from `our repository <https://github.com/knossos-project/knossos_cuber>`_.
 
 Look at the accompanying `README` file to learn how to use `knossos_cuber`.
 
