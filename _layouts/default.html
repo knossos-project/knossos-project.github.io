@@ -9,6 +9,11 @@
 	{% include footer.html %}
 
 	<script src="{{ "js/main.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript">
+		var host = "knossostool.org";
+		if ((host == window.location.host) && (window.location.protocol != "https:"))
+			window.location.protocol = "https";
+	</script>
 </body>
 
 </html>
