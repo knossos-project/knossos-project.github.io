@@ -5,7 +5,7 @@ email: knossos-team@mpimf-heidelberg.mpg.de
 description: >
   KNOSSOS is a scientific application for 3D image data annotation.
 baseurl: "/"
-url: "http://www.knossostool.org"
+url: "https://knossostool.org"
 github_username:  knossos-project
 
 # Build settings
