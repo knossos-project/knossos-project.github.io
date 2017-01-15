@@ -89,11 +89,18 @@ function scrollTo(to, callback, duration) {
 		$banner = document.querySelector('.banner'),
 		$nav = document.querySelector('.header-nav');
 
+	var $snackbar = document.querySelector(".snackbar");
+
+	document.querySelector(".snackbar > .dismiss-btn").addEventListener("click", function () {
+		$snackbar.classList.remove("visible");
+	});
+
 	// Disable animations/transitions until everything's loaded.
 	$body.classList.add('is-loading');
 
 	window.addEventListener('load', function() {
 		$body.classList.remove('is-loading');
+		$snackbar.classList.add("visible");
 	});
 	
 	var $nav__toggle = document.querySelector('[href="#nav"]');
@@ -125,6 +132,8 @@ function scrollTo(to, callback, duration) {
 	// Change Download button depending on operating system.
 	var $button_icon = document.querySelector("[data-button='download'] > i");
 	var $button = document.querySelector("[data-button='download']")
+
+	// console.log(userAgent);
 
 	if(navigator.userAgent.indexOf("Macintosh") > -1) {
 		$button_icon.classList.remove("fa-windows");
