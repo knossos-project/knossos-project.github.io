@@ -1,6 +1,6 @@
-version: 4.1.2
+version: 5.0
 release-url: https://github.com/knossos-project/knossos/releases
 github-url: https://github.com/knossos-project/knossos/
-win-url: https://github.com/knossos-project/knossos/releases/download/v4.1.2/win64-Setup-Knossos.4.1.2.exe
-linux-url: https://github.com/knossos-project/knossos/releases/download/v4.1.2/knossos.deb
-mac-url: https://github.com/knossos-project/knossos/releases/download/v4.1.2/mac-Knossos.4.1.2.app.zip
+win-url: https://github.com/knossos-project/knossos/releases/download/v5.0/win64.setup.KNOSSOS.5.exe
+linux-url: https://github.com/knossos-project/knossos/releases/download/v5.0/linux64.KNOSSOS.5.AppImage
+mac-url: https://github.com/knossos-project/knossos/releases/download/v5.0/osx.KNOSSOS.5.app.zip
