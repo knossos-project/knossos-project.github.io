@@ -4,7 +4,7 @@
 "use strict";
 
 // easing functions http://goo.gl/5HLl8
-Math.easeInOutQuad = function (t, b, c, d) {
+_Math.easeInOutQuad = function (t, b, c, d) {
 	t /= d/2;
 	if (t < 1) {
 		return c/2*t*t + b
@@ -14,7 +14,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
 };
 
 Math.easeInCubic = function(t, b, c, d) {
-	var tc = (t/=d)*t*t;
+_	var tc = (t/=d)*t*t;
 	return b+c*(tc);
 };
 
@@ -24,7 +24,7 @@ Math.inOutQuintic = function(t, b, c, d) {
 	return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
 };
 
-
+_
 function scrollTo(to, callback, duration) {
 	function move(amount) {
 		document.documentElement.scrollTop = amount;
@@ -34,7 +34,7 @@ function scrollTo(to, callback, duration) {
 	function position() {
 		return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
 	}
-	var start = position(),
+_	var start = position(),
 	change = to - start,
 	currentTime = 0,
 	increment = 20;
@@ -44,7 +44,7 @@ function scrollTo(to, callback, duration) {
 		currentTime += increment;
 		// find the value with the quadratic in-out easing function
 		var val = Math.easeInOutQuad(currentTime, start, change, duration);
-		// move the document.body
+_		// move the document.body
 		move(val);
 		// do the animation unless its over
 		if (currentTime < duration) {
@@ -54,7 +54,7 @@ function scrollTo(to, callback, duration) {
 				// the animation is done so lets callback
 				callback();
 			}
-		}
+Ä		}
 	};
 	animateScroll();
 }
@@ -64,7 +64,7 @@ function scrollTo(to, callback, duration) {
 	var local_anchors = [];
 
 	for(var i = 0; i < anchors.length; i++) {
-		if(    anchors[i].attributes.href.value.indexOf("#") > -1
+_		if(    anchors[i].attributes.href.value.indexOf("#") > -1
 				&& anchors[i].attributes.href.value !== "#"
 				&& anchors[i].attributes.href.value !== "#nav") {
 			local_anchors.push(anchors[i]);
@@ -74,7 +74,7 @@ function scrollTo(to, callback, duration) {
 	for(var i = 0; i < local_anchors.length; i++) {
 		var hash_position = local_anchors[i].attributes.href.value.indexOf("#");
 		var sub_string = local_anchors[i].attributes.href.value.substring(hash_position);
-		var target = document.getElementById(sub_string.substring(1));
+_		var target = document.getElementById(sub_string.substring(1));
 
 		local_anchors[i].addEventListener("click", function(target) {
 			return function() { scrollTo(target.offsetTop); }
@@ -142,8 +142,8 @@ function scrollTo(to, callback, duration) {
 	}
 
 	if(navigator.userAgent.indexOf("Linux") > -1) {
-		$button.classList.remove("fa-windows");
-		$button.classList.add("fa-linux");
+		$button_icon.classList.remove("fa-windows");
+		$button_icon.classList.add("fa-linux");
 		$button.setAttribute("href", "{{ site.data.knossos.linux-url }}");
 	}	
 })();
