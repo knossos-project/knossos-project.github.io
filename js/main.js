@@ -4,7 +4,7 @@
 "use strict";
 
 // easing functions http://goo.gl/5HLl8
-_Math.easeInOutQuad = function (t, b, c, d) {
+Math.easeInOutQuad = function (t, b, c, d) {
 	t /= d/2;
 	if (t < 1) {
 		return c/2*t*t + b
@@ -14,7 +14,7 @@ _Math.easeInOutQuad = function (t, b, c, d) {
 };
 
 Math.easeInCubic = function(t, b, c, d) {
-_	var tc = (t/=d)*t*t;
+	var tc = (t/=d)*t*t;
 	return b+c*(tc);
 };
 
@@ -24,7 +24,7 @@ Math.inOutQuintic = function(t, b, c, d) {
 	return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
 };
 
-_
+
 function scrollTo(to, callback, duration) {
 	function move(amount) {
 		document.documentElement.scrollTop = amount;
@@ -34,7 +34,7 @@ function scrollTo(to, callback, duration) {
 	function position() {
 		return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
 	}
-_	var start = position(),
+	var start = position(),
 	change = to - start,
 	currentTime = 0,
 	increment = 20;
@@ -44,7 +44,7 @@ _	var start = position(),
 		currentTime += increment;
 		// find the value with the quadratic in-out easing function
 		var val = Math.easeInOutQuad(currentTime, start, change, duration);
-_		// move the document.body
+		// move the document.body
 		move(val);
 		// do the animation unless its over
 		if (currentTime < duration) {
@@ -54,7 +54,7 @@ _		// move the document.body
 				// the animation is done so lets callback
 				callback();
 			}
-Ä		}
+		}
 	};
 	animateScroll();
 }
@@ -64,7 +64,7 @@ _		// move the document.body
 	var local_anchors = [];
 
 	for(var i = 0; i < anchors.length; i++) {
-_		if(    anchors[i].attributes.href.value.indexOf("#") > -1
+		if(    anchors[i].attributes.href.value.indexOf("#") > -1
 				&& anchors[i].attributes.href.value !== "#"
 				&& anchors[i].attributes.href.value !== "#nav") {
 			local_anchors.push(anchors[i]);
@@ -74,7 +74,7 @@ _		if(    anchors[i].attributes.href.value.indexOf("#") > -1
 	for(var i = 0; i < local_anchors.length; i++) {
 		var hash_position = local_anchors[i].attributes.href.value.indexOf("#");
 		var sub_string = local_anchors[i].attributes.href.value.substring(hash_position);
-_		var target = document.getElementById(sub_string.substring(1));
+		var target = document.getElementById(sub_string.substring(1));
 
 		local_anchors[i].addEventListener("click", function(target) {
 			return function() { scrollTo(target.offsetTop); }
