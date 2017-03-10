@@ -9,7 +9,7 @@
 	background: #4E92DF;
 	box-shadow: inset 0px -1px 0px 0px rgba(60,114,177,1);
 	transition: background .2s ease-in-out, color .2s ease-in-out;
-	
+
 	&:hover {
 		background: #5496E0;
 		color: #fff;
@@ -17,14 +17,14 @@
 }
 
 .header-nav--expanded a {
-	height: auto !important;
+	display: block !important;
 }
 
 .header-nav a:not(:first-of-type) {
-	height: 0;
-	
+	display: none;
+
 	@include breakpoint($on-mobile) {
-		height: auto;
+		display: block;
 	}
 }
 
@@ -36,7 +36,6 @@
 
 .header-nav {
 	@extend .-no-rhythm;
-	
 	display: flex;
 	flex-direction: column;
 	position: fixed;
@@ -44,20 +43,19 @@
 	z-index: 2;
 	width: 100%;
 	border-bottom: 1px solid rgba(#152E4C, .5);
-	transition: top .5s ease-in-out;
+	transition: transform .5s ease-in-out;
 	line-height: 3em;
 	text-align: center;
-	
+
 	@include breakpoint($on-mobile) {
 		flex-direction: row;
-		top: -3em;
-		height: 3em;
+		transform: translateY(-100%);
 	}
-	
+
 	&--visible {
-		top: 0;
+		transform: translateY(0%);
 	}
-	
+
 	a + a {
 		border-left: 1px solid #4B8DD8;
 	}
@@ -65,7 +63,7 @@
 
 .nav {
 	display: none;
-	
+
 	@include breakpoint($on-mobile) {
 		display: flex;
 		font-size: 1.4rem;
@@ -73,16 +71,16 @@
 		max-width: 960px;
 		letter-spacing: 1px;
 		margin-bottom: 2em;
-	
+
 		a {
 			color: #b0b8c1;
 			padding-bottom: .5em;
 			transition: color .2s ease-in-out, border-color .2s ease-in-out;
-		
+
 			&:hover, &.active {
 				color: #fff;
 				border-color: #5C9CE5;
 			}
 		}
-	}	
+	}
 }

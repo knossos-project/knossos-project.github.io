@@ -102,7 +102,7 @@ function scrollTo(to, callback, duration) {
 		$body.classList.remove('is-loading');
 		$snackbar.classList.add("visible");
 	});
-	
+
 	var $nav__toggle = document.querySelector('[href="#nav"]');
 	$nav__toggle.addEventListener("click", function () {
 		$nav.classList.toggle("header-nav--expanded");
@@ -133,8 +133,6 @@ function scrollTo(to, callback, duration) {
 	var $button_icon = document.querySelector("[data-button='download'] > i");
 	var $button = document.querySelector("[data-button='download']")
 
-	// console.log(userAgent);
-
 	if(navigator.userAgent.indexOf("Macintosh") > -1) {
 		$button_icon.classList.remove("fa-windows");
 		$button_icon.classList.add("fa-apple");
@@ -145,6 +143,6 @@ function scrollTo(to, callback, duration) {
 		$button_icon.classList.remove("fa-windows");
 		$button_icon.classList.add("fa-linux");
 		$button.setAttribute("href", "{{ site.data.knossos.linux-url }}");
-	}	
+	}
 })();
 
