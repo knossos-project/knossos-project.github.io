@@ -1,17 +1,16 @@
 @keyframes animatedBackground {
 	from { background-position: top left; }
-	to { background-position: bottom left; }
+	to { background-position: 0 512px; }
 }
 
 .banner {
 	background: #353F4E url("/images/bg.svg") repeat top left;
 	background-size: 512px 512px;
-	// max-height: 1080px;
 	overflow-y: hidden;
 	position: relative;
 	padding-top: 8em;
 	animation: animatedBackground 60s linear infinite;
-	
+
 	@include breakpoint($on-mobile) {
 		padding-top: 0;
 	}
@@ -19,7 +18,7 @@
 	section + section {
 		margin-top: 4em;
 	}
-	
+
 	ul {
 		@extend .-center;
 		max-width: 540px;
@@ -38,7 +37,7 @@
 		img {
 			display: block;
 		}
-		
+
 		&__chrome {
 			background-color: #e5e5e5;
 			border-top-left-radius: 8px;
@@ -47,7 +46,7 @@
 			line-height: 2em;
 			padding: 1em;
 			position: relative;
-			
+
 			&:before {
 				content: '\f00d \f078 \f077';
 				letter-spacing: .5em;
@@ -70,6 +69,4 @@
 			}
 		}
 	}
-	
-	
 }
