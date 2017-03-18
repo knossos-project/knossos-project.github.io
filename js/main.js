@@ -91,16 +91,18 @@ function scrollTo(to, callback, duration) {
 
 	var $snackbar = document.querySelector(".snackbar");
 
-	document.querySelector(".snackbar > .dismiss-btn").addEventListener("click", function () {
-		$snackbar.classList.remove("visible");
-	});
+	if ($snackbar != null) {
+		document.querySelector(".snackbar > .dismiss-btn").addEventListener("click", function () {
+				$snackbar.classList.remove("visible");
+			});
+	}
 
 	// Disable animations/transitions until everything's loaded.
 	$body.classList.add('is-loading');
 
 	window.addEventListener('load', function() {
 		$body.classList.remove('is-loading');
-		$snackbar.classList.add("visible");
+		if ($snackbar != null) $snackbar.classList.add("visible");
 	});
 
 	var $nav__toggle = document.querySelector('[href="#nav"]');

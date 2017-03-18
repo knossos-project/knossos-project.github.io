@@ -2,12 +2,6 @@
 layout: default
 ---
 
-<div class="snackbar">
-	<span class="label"><i class="fa fa-birthday-cake" aria-hidden="true"></i> KNOSSOS 5.0 has been released! <i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
-	<a class="action-btn" href="{{ site.data.knossos.release-url }}">Download</a>
-	<a class="dismiss-btn" href="#/">Dismiss</a>
-</div>
-
 <nav class="header-nav row row--no-wrap">
 	<a class="header-nav__toggle row__col" href="#nav"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Navigation</a>
 	{% include nav.html %}
@@ -17,29 +11,29 @@ layout: default
 	<nav class="nav row -center">
 		{% include nav.html %}
 	</nav>
-		
+
 	<div class="container -center row row--middle">
 		<div class="row__col">
 			<section>
 				<h1>KNOSSOS</h1>
 				<p class="byline">3D Image Visualization and Annotation</p>
-		
+
 				<ul class="list--horizontal">
 					<li><a
 						href="{{ site.data.knossos.win-url }}"
 						class="button button--primary" data-button="download"><i class="fa fa-windows"></i> Latest
 						Release ({{ site.data.knossos.version }}, 64bit)</a></li>
-				
+
 					<li><a href="#GettingStartedSection" class="button"><i class="fa fa-download"></i> Download Dataset</a></li>
 
 					<li><a href="{{ "documentation/" | prepend: site.baseurl }}" class="button"><i class="fa fa-book"></i> Documentation</a></li>
-					
+
 					<li><a href="#DevelopmentSection" class="button button--purple"><i class="fa fa-lightbulb-o"></i> Help & Contribute</a></li>
 				</ul>
-				
+
 				<sub>Not your system? <a href="https://github.com/knossos-project/knossos/releases">Click here</a></sub>
 			</section>
-			
+
 			<section>
 				<div class="browser-mockup -center">
 					<div class="browser-mockup__chrome"></div>
@@ -70,21 +64,21 @@ layout: default
 		<header class="major">
 			<h2>Help & Contribute<span class="__icon"><i class="fa fa-lightbulb-o"></i></span></h2>
 		</header>
-		
+
 		<div class="row row--gutter row--start">
 			<div class="row__col box box--special">
 				<h5>Bug Reports & Feature Requests</h5>
-			
+
 				<p><strong>KNOSSOS</strong> is being actively maintained to provide a useful tool to the study of connectomics. If you miss a feature that would make <strong>KNOSSOS</strong> more useful for your research, please tell us on our <a href="https://github.com/knossos-project/knossos/issues">issue tracker on GitHub <i class="fa fa-external-link"></i></a> or <a href="mailto:knossos-team@mpimf-heidelberg.mpg.de">via e-mail</a>.</p>
-				
+
 				<p>If you encounter any bugs while using <strong>KNOSSOS</strong>, please tell us as well.</p>
 			</div>
-			
+
 			<div class="row__col box box--special">
 				<h5>Integrating KNOSSOS</h5>
-			
+
 				<p><strong>KNOSSOS</strong> can be integrated into your existing workflow, either by using the main program or its Python plugin interface.</p>
-				
+
 				<p>You can contact us if you need help in writing Python plugins for <strong>KNOSSOS</strong> or if you have an idea how to improve <strong>KNOSSOS’</strong> integration with your workflow.</p>
 			</div>
 
