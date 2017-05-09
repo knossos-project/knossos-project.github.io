@@ -1,0 +1,27 @@
+<div class="container--large -center">	
+	<header class="major">
+		<h2>KNOSSOS<br>References</h2>
+	</header>
+	
+	<div class="PapersTable">
+		<table>
+			<thead>
+				<tr>
+					<th>Date of Publication</th>
+					<th>Title of Publication</th>
+					<th>DOI Link</th>
+				</tr>
+			</thead>
+
+			{% for paper in site.data.papers %}
+			<tr>
+				<td><date>{{ paper.date }}</date></td>
+
+				<td>{{ paper.title }}</td>
+
+				<td><a href="{{ paper.doi }}">{{ paper.doi }}</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
