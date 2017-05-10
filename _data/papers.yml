@@ -1,6 +1,12 @@
 - date: March 27, 2017
   title: EM connectomics reveals axonal target variation in a sequence-generating network
   doi: http://dx.doi.org/10.7554/eLife.24364
+- date: February 27, 2017
+  title: Automated synaptic connectivity inference for volume electron microscopy
+  doi: http://doi.org/10.1038/nmeth.4206
+- date: February 06, 2017
+  title: When complex neuronal structures may not matter
+  doi: http://dx.doi.org/10.7554/eLife.23508
 - date: November 08, 2016
   title: 3-dimensional electron microscopic imaging of the zebrafish olfactory bulb and dense reconstruction of neurons
   doi: https://dx.doi.org/10.1038%2Fsdata.2016.100
@@ -10,9 +16,38 @@
 - date: July 26, 2016
   title: Connectivity map of bipolar cells and photoreceptors in the mouse retina
   doi: https://doi.org/10.1101/065722
+- date: July 09, 2016
+  title: Analysis of Brain Mitochondria Using Serial Block-Face Scanning Electron Microscopy
+  doi: http://dx.doi.org/10.3791/54214
 - date: July 07, 2016
   title: Species-specific wiring for direction selectivity in the mammalian retina
   doi: http://dx.doi.org/10.1038%2Fnature18609
+- date: April 23, 2015
+  title: Challenges of microtome-based serial block-face scanning electron microscopy in neuroscience
+  doi: http://doi.org/10.1111/jmi.12244
 - date: August 08, 2013
   title: Connectomic reconstruction of the inner plexiform layer in the mouse retina
   doi: http://doi.org/10.1038/nature12346
+- date: January 16, 2013
+  title: >
+    Computer Assisted Assembly of Connectomes from Electron Micrographs: Application to Caenorhabditis elegans
+  doi: https://doi.org/10.1371/journal.pone.0054050
+- date: October 06, 2012
+  title: Towards Semi-Automatic Reconstruction of Neural Circuits
+  doi: doi.org/10.1007/s12021-012-9166-x
+- date: July 27, 2012
+  title: Computational Methods and Challenges for Large-Scale Circuit Mapping
+  doi: https://dx.doi.org/10.1016%2Fj.conb.2011.11.010
+- date: March 07, 2012
+  title: Applications of Computational 3D–Modeling in Organismal Biology
+  doi: http://doi.org/10.5772/31092
+- date: July 10, 2011
+  title: High-accuracy neurite reconstruction for high-throughput neuroanatomy
+  doi: http://doi.org/10.1038/nn.2868
+- date: March 09, 2011
+  title: Wiring specificity in the direction-selectivity circuit of the retina
+  doi: http://doi.org/10.1038/nature09818
+- date: August 30, 2010
+  title: > 
+    Machines that learn to segment images: a crucial technology for connectomics
+  doi: https://doi.org/10.1016/j.conb.2010.07.004
