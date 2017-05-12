@@ -1,18 +1,18 @@
 .container {
 	width: 90%;
 	max-width: 960px;
-	
+
 	&--medium {
 		width: 90%;
 		max-width: 720px;
 	}
-	
+
 	&--large {
 		width: 90%;
 		max-width: 960px;
 	}
-	
-	
+
+
 	@include breakpoint($on-mobile) {
 		&--large-half {
 			width: 90%;
@@ -25,12 +25,12 @@
 	margin-top: 0;
 	padding-top: 4em;
 	padding-bottom: 4em;
-	
+
 	&--no-padding {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	
+
 	&--style1 {
 		background: #5B6E8C;
 	}
@@ -83,6 +83,7 @@
 				text-align: center;
 				font-style: italic;
 				font-size: 1.5rem;
+				min-width: 12em;
 			}
 
 			&:nth-of-type(2) {
@@ -98,17 +99,17 @@
 	padding: 1em 2em 2em;
 	font-size: 1.5rem;
 	color: lighten(#d6dbe2, 10);
-	
+
 	&--special {
 		border-color: #67a0e4;
 		background: #7DAEE8;
 	}
-	
+
 	&--purple {
 		background: #928CC7;
 		border-color: #7770BB;
 	}
-	
+
 	h5 {
 		display: block;
 		padding-bottom: 6px;
@@ -118,7 +119,7 @@
 
 .row__col.box + .row__col.box {
 	margin-top: 1em;
-	
+
 	@include breakpoint($on-mobile) {
 		margin-top: 0;
 	}
@@ -129,31 +130,31 @@
 	.row + .row, .row__col + .row__col {
 		margin-top: 0;
 	}
-	
+
 	.container--large-half {
 		padding: 3em 2em;
 	}
-	
-	
+
+
 	@include breakpoint($on-mobile) {
 		.row__col:first-child > * {
 			margin-left: auto;
 			margin-right: 0;
 		}
-		
+
 		.row__col:last-child > * {
 			margin-left: 0;
 			margin-right: auto;
 		}
 	}
-	
-	
+
+
 	@for $i from 1 through 3 {
 		$j: 0.035 * ($i - 1);
-		
+
 		.row:nth-of-type(#{$i}) {
 			background-color: rgba(0,0,0, $j);
-			
+
 			@for $k from 1 through 2 {
 				.row__col:nth-of-type(#{$k}) {
 					background: rgba(0, 0,0 , $j * $k)
@@ -222,18 +223,18 @@
 
 #TeamSection {
 	.member-image + .member-image {
-		margin-top: 2em;	
+		margin-top: 2em;
 	}
-	
+
 	.row {
 		margin-top: 2em;
 	}
-	
+
 	@include breakpoint($on-mobile) {
 		.member-image + .member-image {
 			margin-top: 0;
 		}
-		
+
 		.row + .row {
 			margin-top: 2em;
 		}
