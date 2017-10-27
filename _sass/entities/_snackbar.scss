@@ -20,6 +20,10 @@
 		width: 100%;
 	}
 
+	> .action-btn {
+		color: #e44c65;
+	}
+
 	> .label, > .action-btn, > .dismiss-btn {
 		display: table-cell;
 	}
