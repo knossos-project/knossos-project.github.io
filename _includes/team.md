@@ -21,13 +21,13 @@ About us<span class="__icon"><i class="fa fa-users"></i></span>
 {% if loopindex == 1 %}
 <div class="row -text-center">
 <div class="row__col member-image">
-<img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
+<img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="Picture of {{ member.name }}, {{ member.description }}" width="200" height="200">
 <h4>{{ member.name }}</h4>
 <p>{{ member.description }}</p>
 </div>
 {% else %}
 <div class="row__col member-image">
-<img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
+<img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="Picture of {{ member.name }}, {{ member.description }}" width="200" height="200">
 <h4>{{ member.name }}</h4>
 <p>{{ member.description }}</p>
 </div>
