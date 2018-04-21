@@ -1,15 +1,9 @@
-@keyframes animatedBackground {
-	from { background-position: top left; }
-	to { background-position: 0 512px; }
-}
-
 .banner {
-	background: #353F4E url("/images/bg.svg") repeat top left;
-	background-size: 512px 512px;
+	background: #353F4E url("/images/grain_header.jpg") top center no-repeat;
+	max-height: 1080px;
 	overflow-y: hidden;
 	position: relative;
 	padding-top: 8em;
-	animation: animatedBackground 60s linear infinite;
 
 	@include breakpoint($on-mobile) {
 		padding-top: 0;
