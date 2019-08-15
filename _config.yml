@@ -1,7 +1,7 @@
 # Site settings
 title: KNOSSOS &mdash; 3D Image Annotation
 name: KNOSSOS
-email: knossos-team@mpimf-heidelberg.mpg.de
+email: knossosteam@gmail.com
 description: >
   KNOSSOS is a scientific application for 3D image data annotation.
 baseurl: ""

@@ -47,4 +47,4 @@ We would like to thank the following persons for their contributions towards **K
 
 If you have any questions or suggestions regarding **KNOSSOS**, feel free to write us:
 
-<a href="mailto:knossos-team@mpimf-heidelberg.mpg.de" class="button button--small"><i class="fa fa-envelope"></i> knossos-team@mpimf-heidelberg.mpg.de</a>
+<a href="mailto:knossosteam@gmail.com" class="button button--small"><i class="fa fa-envelope"></i> knossosteam@gmail.com</a>
