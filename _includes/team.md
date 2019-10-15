@@ -3,7 +3,7 @@ About us<span class="__icon"><i class="fa fa-users"></i></span>
 ---------------------------------------------------------------------
 </header>
 
-**KNOSSOS** is developed by a group of students from *Heidelberg University* and *Karlsruhe Institute of Technology*, employed at *Max Planck Institute for Medical Research*.
+**KNOSSOS** is developed by a global team of open source contributors — get in touch with us if you want to help!
 
 {% for member in site.data.members %}
 {% assign loopindex = forloop.index | modulo: 2 %}
