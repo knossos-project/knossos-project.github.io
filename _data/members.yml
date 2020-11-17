@@ -22,20 +22,8 @@
   github: Optiligence
   picture: norbert.png
 
-- name: Michael Pronkin
-  description: >
-    B.Sc., Computer Science
-  github: n0void
-  picture: michi.png
-
 - name: Sebastian Spaar
   description: >
     B.A., Computational Linguistics
   github: Eroica
   picture: seba.png
-
-- name: Alex Stepanov
-  description: >
-    Master Student of Computer Science
-  github: al3xst
-  picture: alex.jpg
