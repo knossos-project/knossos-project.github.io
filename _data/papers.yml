@@ -1,21 +1,27 @@
-- date: October 19, 2020
+- date: July 05, 2021
+  title: Cell type specific labeling and partial connectomes of dopaminergic circuits reveal non-synaptic communication and large-scale axonal remodeling after exposure to cocaine
+  doi: https://doi.org/10.1101/2020.09.29.318881
+- date: May 13, 2021
+  title: Permeabilization-free en bloc immunohistochemistry for correlative microscopy
+  doi: https://doi.org/10.7554/eLife.63392
+- date: June 09, 2021
   title: Multi-modal imaging of a single postmortem mouse brain over five orders of magnitude of resolution
-  doi: https://doi.org/10.1101/2020.10.07.329789
+  doi: https://doi.org/10.1016/j.neuroimage.2021.118250
+- date: December 20, 2020
+  title: Primate neuronal connections are sparse as compared to mouse
+  doi: https://doi.org/10.1101/2020.09.24.311852
+- date: December 16 2020
+  title: Three-dimensional Fib-Sem reconstruction of microtubule-organelle interaction in whole primary mouse beta cells
+  doi: https://doi.org/10.1083/jcb.202010039
 - date: October 12, 2020
   title: Synapse-specific direction selectivity in retinal bipolar cell axon terminals
   doi: https://doi.org/10.1101/2020.10.12.335810
-- date: October 10, 2020
-  title: Three-dimensional Fib-Sem reconstruction of microtubule-organelle interaction in whole primary mouse beta cells
-  doi: https://doi.org/10.1101/2020.10.07.329268
-- date: October 08, 2020
-  title: Permeabilization-free en bloc immunohistochemistry for correlative microscopy
-  doi: https://doi.org/10.1101/2020.10.07.327734
-- date: September 29, 2020
-  title: Cocaine causes rapid remodeling of dopaminergic axons, synapses, and mitochondria
-  doi: https://doi.org/10.1101/2020.09.29.318881
-- date: September 24, 2020
-  title: Primate neuronal connections are sparse as compared to mouse
-  doi: https://doi.org/10.1101/2020.09.24.311852
+- date: 07 July 2020
+  title: Imaging Plant Cells by High-Pressure Freezing and Serial block-face scanning electron microscopy
+  doi: https://doi.org/10.1007/978-1-0716-0767-1_7
+- date: 30 June 2020
+  title: Image Processing for Volume Electron Microscopy
+  doi: https://doi.org/10.1007/978-1-0716-0691-9_13
 - date: June 21, 2019
   title: Learning cellular morphology with neural networks
   doi: https://doi.org/10.1038/s41467-019-10836-3
