@@ -1,5 +1,5 @@
 # Site settings
-title: KNOSSOS — 3D Image Annotation
+title: KNOSSOS
 name: KNOSSOS
 email: knossosteam@gmail.com
 description: >
@@ -9,20 +9,20 @@ url: "https://knossos.app"
 github_username:  knossos-project
 
 # Build settings
-markdown: kramdown
-
+theme: just-the-docs
 kramdown:
   parse_block_html: true
-  # auto_ids: false
 
-sass:
-  style: :compressed
+aux_links:
+  "KNOSSOS on GitHub":
+    - "https://github.com/knossos-project/knossos"
+nav_external_links:
+  - title: Home
+    url: /
+    hide_icon: true
 
-include:
- - _images
- - _sources
- - _static
-
-exclude:
-  - "feed.xml"
-  - "Makefile"
+callouts_level: quiet
+callouts:
+  note:
+    title: Note
+    color: blue
