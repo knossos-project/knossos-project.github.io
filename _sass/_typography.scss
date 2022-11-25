@@ -82,15 +82,16 @@ code {
 ul.actions {
 	line-height: 3.5;
 
-	li {
-		display: block;
-	}
+	li {display: block; }
 
 	@include breakpoint(600px) {
-		li {
-			display: inline-block;
-		}
+		li {display: inline-block; }
 	}
+}
+ul.-inline {
+	line-height: 2;
+	
+	li {display: inline-block; }
 }
 
 button,
