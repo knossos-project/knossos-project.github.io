@@ -9,22 +9,24 @@
 }
 
 #PapersSection {
-	.major h2 {
-		&::before, &::after {
-			position: absolute;
-			font-size: 50px;
-			line-height: 1;
-			top: 0;
-		}
-		&::before {
-			left: -50px;
-			transform: rotate(30deg) scaleX(-1);
-			content: "❧";
-		}
-		&::after {
-			right: -50px;
-			transform: rotate(-30deg);
-			content: "❧";
+	@include breakpoint(600px) {
+		.major h2 {
+			&::before, &::after {
+				position: absolute;
+				font-size: 50px;
+				line-height: 1;
+				top: 0;
+			}
+			&::before {
+				left: -50px;
+				transform: rotate(30deg) scaleX(-1);
+				content: "❧";
+			}
+			&::after {
+				right: -50px;
+				transform: rotate(-30deg);
+				content: "❧";
+			}
 		}
 	}
 }
