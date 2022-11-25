@@ -4,15 +4,15 @@
 "use strict";
 
 (function() {
-	const $body = document.querySelector('body'),
-		$banner = document.querySelector('.banner'),
-		$nav = document.querySelector('.header-nav');
+	const $body = document.querySelector("body"),
+		$banner = document.querySelector(".banner"),
+		$nav = document.querySelector(".header-nav");
 
-	// Disable animations/transitions until everything's loaded.
-	$body.classList.add('is-loading');
+	// Disable animations/transitions until everything"s loaded.
+	$body.classList.add("is-loading");
 
-	window.addEventListener('load', function() {
-		$body.classList.remove('is-loading');
+	window.addEventListener("load", function() {
+		$body.classList.remove("is-loading");
 	});
 
 	let locked = false;
