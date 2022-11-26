@@ -1,31 +1,105 @@
-@media (min-width: $on-mobile) {
-	.row {
-		display: flex;
-		flex-direction: row;
-		
-		&__col { flex: 1 }
-		&__col--grow-0 { flex-grow: 0 }
-	
-		&__col--fixed-width {
-			flex-grow: 0;
-			flex-basis: initial;
-		}
-	}
-	
-	.row.row--start {
-		align-items: flex-start;
-	}
-	
-	.row.row--gutter {
-		.row__col + .row__col {
-			margin-left: 2em;
-		}
-	}
-	
-	.row.row--wrap { flex-wrap: wrap }
-	.row.row--no-wrap { flex-wrap: nowrap }
-	.row.row--middle {
-		align-items: center;
-		align-content: center;
-	}	
+/* Raster grid subsystem (rsms.me/raster) */
+[data-grid] {
+  display: grid;
+  --grid-tc: repeat(2, 1fr);
+  grid-template-columns: var(--grid-tc);
+  grid-gap: 1em;
+  --grid-cs: 1; /* column start */
+  --grid-ce: -1 /* column end */
+}
+
+/* [data-cell] -- cell or column */
+[data-grid] > [data-cell] { display: block; appearance: none; -webkit-appearance: none }
+
+[data-grid][columns="1"] { --grid-tc: repeat(1, 1fr) }
+[data-grid][columns="2"] { --grid-tc: repeat(2, 1fr) }
+[data-grid][columns="3"] { --grid-tc: repeat(3, 1fr) }
+[data-grid][columns="4"] { --grid-tc: repeat(4, 1fr) }
+[data-grid][columns="5"] { --grid-tc: repeat(5, 1fr) }
+
+/* span=start... */
+[data-grid] > [data-cell][span^="1"] { --grid-cs: 1 }
+[data-grid] > [data-cell][span^="2"] { --grid-cs: 2 }
+[data-grid] > [data-cell][span^="3"] { --grid-cs: 3 }
+[data-grid] > [data-cell][span^="4"] { --grid-cs: 4 }
+[data-grid] > [data-cell][span^="5"] { --grid-cs: 5 }
+
+/* span=...+width, span=...-end */
+[data-grid] > [data-cell][span$="+1"], [data-grid] > [data-cell][span="1"] { --grid-ce: 1 }
+[data-grid] > [data-cell][span$="+2"], [data-grid] > [data-cell][span$="-1"], [data-grid] > [data-cell][span="2"] { --grid-ce: 2 }
+[data-grid] > [data-cell][span$="+3"], [data-grid] > [data-cell][span$="-2"], [data-grid] > [data-cell][span="3"] { --grid-ce: 3 }
+[data-grid] > [data-cell][span$="+4"], [data-grid] > [data-cell][span$="-3"], [data-grid] > [data-cell][span="4"] { --grid-ce: 4 }
+[data-grid] > [data-cell][span$="+5"], [data-grid] > [data-cell][span$="-4"], [data-grid] > [data-cell][span="5"] { --grid-ce: 5 }
+[data-grid] > [data-cell][span$="-5"] { --grid-ce: 6 }
+
+/* connect vars */
+[data-grid] > [data-cell][span] { grid-column-end: span var(--grid-ce) }
+[data-grid] > [data-cell][span*="+"], [data-grid] > [data-cell][span*="-"], [data-grid] > [data-cell][span*=".."] {
+  grid-column-start: var(--grid-cs) }
+[data-grid] > [data-cell][span*="-"], [data-grid] > [data-cell][span*=".."] {
+  grid-column-end: var(--grid-ce) }
+[data-grid] > [data-cell][span="row"] { grid-column: 1 / -1 }
+
+/* for window width <= 600 */
+@media only screen and (max-width: 600px) {
+  [data-grid][columns-s="1"] { --grid-tc: repeat(1, 1fr) }
+  [data-grid][columns-s="2"] { --grid-tc: repeat(2, 1fr) }
+  [data-grid][columns-s="3"] { --grid-tc: repeat(3, 1fr) }
+  [data-grid][columns-s="4"] { --grid-tc: repeat(4, 1fr) }
+  [data-grid][columns-s="5"] { --grid-tc: repeat(5, 1fr) }
+  
+  /* span-s=start... */
+  [data-grid] > [data-cell][span-s^="1"] { --grid-cs: 1 }
+  [data-grid] > [data-cell][span-s^="2"] { --grid-cs: 2 }
+  [data-grid] > [data-cell][span-s^="3"] { --grid-cs: 3 }
+  [data-grid] > [data-cell][span-s^="4"] { --grid-cs: 4 }
+  [data-grid] > [data-cell][span-s^="5"] { --grid-cs: 5 }
+  
+  /* span-s=...+width, span-s=...-end */
+  [data-grid] > [data-cell][span-s$="+1"], [data-grid] > [data-cell][span-s="1"] { --grid-ce: 1 }
+  [data-grid] > [data-cell][span-s$="+2"], [data-grid] > [data-cell][span-s$="-1"], [data-grid] > [data-cell][span-s="2"] { --grid-ce: 2 }
+  [data-grid] > [data-cell][span-s$="+3"], [data-grid] > [data-cell][span-s$="-2"], [data-grid] > [data-cell][span-s="3"] { --grid-ce: 3 }
+  [data-grid] > [data-cell][span-s$="+4"], [data-grid] > [data-cell][span-s$="-3"], [data-grid] > [data-cell][span-s="4"] { --grid-ce: 4 }
+  [data-grid] > [data-cell][span-s$="+5"], [data-grid] > [data-cell][span-s$="-4"], [data-grid] > [data-cell][span-s="5"] { --grid-ce: 5 }
+  [data-grid] > [data-cell][span-s$="-5"] { --grid-ce: 6 }
+  
+  /* connect vars */
+  [data-grid] > [data-cell][span-s] { grid-column-end: span var(--grid-ce) }
+  [data-grid] > [data-cell][span-s*="+"], [data-grid] > [data-cell][span-s*="-"], [data-grid] > [data-cell][span-s*=".."] {
+    grid-column-start: var(--grid-cs) }
+  [data-grid] > [data-cell][span-s*="-"], [data-grid] > [data-cell][span-s*=".."] {
+    grid-column-end: var(--grid-ce) }
+  [data-grid] > [data-cell][span-s="row"] { grid-column: 1 / -1 }
+}
+
+/* for window width >= 960 */
+@media only screen and (min-width: 959px) {
+  [data-grid][columns-l="1"] { --grid-tc: repeat(1, 1fr) }
+  [data-grid][columns-l="2"] { --grid-tc: repeat(2, 1fr) }
+  [data-grid][columns-l="3"] { --grid-tc: repeat(3, 1fr) }
+  [data-grid][columns-l="4"] { --grid-tc: repeat(4, 1fr) }
+  [data-grid][columns-l="5"] { --grid-tc: repeat(5, 1fr) }
+  
+  /* span-l=start... */
+  [data-grid] > [data-cell][span-l^="1"] { --grid-cs: 1 }
+  [data-grid] > [data-cell][span-l^="2"] { --grid-cs: 2 }
+  [data-grid] > [data-cell][span-l^="3"] { --grid-cs: 3 }
+  [data-grid] > [data-cell][span-l^="4"] { --grid-cs: 4 }
+  [data-grid] > [data-cell][span-l^="5"] { --grid-cs: 5 }
+  
+  /* span-l=...+width, span-l=...-end */
+  [data-grid] > [data-cell][span-l$="+1"], [data-grid] > [data-cell][span-l="1"] { --grid-ce: 1 }
+  [data-grid] > [data-cell][span-l$="+2"], [data-grid] > [data-cell][span-l$="-1"], [data-grid] > [data-cell][span-l="2"] { --grid-ce: 2 }
+  [data-grid] > [data-cell][span-l$="+3"], [data-grid] > [data-cell][span-l$="-2"], [data-grid] > [data-cell][span-l="3"] { --grid-ce: 3 }
+  [data-grid] > [data-cell][span-l$="+4"], [data-grid] > [data-cell][span-l$="-3"], [data-grid] > [data-cell][span-l="4"] { --grid-ce: 4 }
+  [data-grid] > [data-cell][span-l$="+5"], [data-grid] > [data-cell][span-l$="-4"], [data-grid] > [data-cell][span-l="5"] { --grid-ce: 5 }
+  [data-grid] > [data-cell][span-l$="-5"] { --grid-ce: 6 }
+  
+  /* connect vars */
+  [data-grid] > [data-cell][span-l] { grid-column-end: span var(--grid-ce) }
+  [data-grid] > [data-cell][span-l*="+"], [data-grid] > [data-cell][span-l*="-"], [data-grid] > [data-cell][span-l*=".."] {
+    grid-column-start: var(--grid-cs) }
+  [data-grid] > [data-cell][span-l*="-"], [data-grid] > [data-cell][span-l*=".."] {
+    grid-column-end: var(--grid-ce) }
+  [data-grid] > [data-cell][span-l="row"] { grid-column: 1 / -1 }
 }

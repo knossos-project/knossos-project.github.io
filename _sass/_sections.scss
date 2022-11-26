@@ -1,0 +1,134 @@
+.container {
+	max-width: 960px;
+	&.-medium {max-width: 720px; }
+	&.-small {max-width: 540px; }
+}
+
+.content {
+	&.-style1 {background: #5B6E8C; }
+}
+
+#PapersSection {
+	.major h2 {
+		&::before, &::after {
+			position: absolute;
+			font-size: 50px;
+			line-height: 1;
+			top: 0;
+		}
+		&::before {
+			left: -50px;
+			transform: rotate(30deg) scaleX(-1);
+			content: "❧";
+		}
+		&::after {
+			right: -50px;
+			transform: rotate(-30deg);
+			content: "❧";
+		}
+	}
+}
+
+.PapersTable {
+	border: 1px solid #67a0e4;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom: 0;
+	max-height: 600px;
+	overflow: auto;
+
+	& + p {
+		margin-top: 0;
+		padding: 1em;
+		border: 1px solid #67a0e4;
+		border-bottom: 0;
+	}
+
+	> table {
+		border-collapse: collapse;
+
+		tr:nth-of-type(2n) {background: rgba(#000, .1); }
+		thead {border-bottom: 1px solid #67a0e4; }
+
+		th {
+			text-align: center;
+			padding: 1em;
+			background: #7DAEE8;
+			color: #fff;
+			font-size: .8rem;
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+
+		td {
+			padding: 1em;
+
+			&:first-of-type {
+				text-align: center;
+				font-style: italic;
+				font-size: .9rem;
+				min-width: 12em;
+			}
+
+			&:nth-of-type(2) {color: #fff; }
+		}
+	}
+}
+
+#FeaturesSection {
+	img {
+		display: block;
+		max-width: 100%;
+	}
+
+	[data-cell] > * {
+		padding-top: 2em;
+		padding-bottom: 2em;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	@include breakpoint(600px) {
+		[data-cell] > * {
+			max-width: 480px;
+			padding-top: 3em;
+			padding-bottom: 3em;
+		}
+		[data-cell]:first-of-type > * {
+			margin-left: auto;
+			margin-right: 0;
+		}
+
+	}
+
+	@for $i from 1 through 3 {
+		$j: 0.035 * ($i - 1);
+
+		[data-grid]:nth-of-type(#{$i}) {
+			background-color: rgba(0,0,0, $j);
+
+			@for $k from 1 through 2 {
+				[data-cell]:nth-of-type(#{$k}) {
+					background: rgba(0, 0,0 , $j * $k)
+				}
+			}
+		}
+	}
+}
+
+.GitHubBackground {
+	position: relative;
+	overflow: hidden;
+
+	> svg {
+		pointer-events: none;
+		display: block;
+		bottom: -100px;
+		right: -8%;
+		width: 300px;
+		position: absolute;
+		color: rgba(#000, .25);
+		z-index: -1;
+		transform: rotate(-8deg);
+	}
+}
