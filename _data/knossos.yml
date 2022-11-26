@@ -1,6 +1,6 @@
 version: 5.1
 release-url: https://github.com/knossos-project/knossos/releases
 github-url: https://github.com/knossos-project/knossos/
-win-url: https://github.com/knossos-project/knossos/releases/download/v5.1/win.setup.KNOSSOS-5.1.exe
-linux-url: https://github.com/knossos-project/knossos/releases/download/v5.1/linux.KNOSSOS-5.1.AppImage
-mac-url: https://github.com/knossos-project/knossos/releases/download/v5.1/macos.KNOSSOS-5.1.zip
+win-url: https://github.com/knossos-project/knossos/releases/download/nightly/win.KNOSSOS.nightly.exe
+linux-url: https://github.com/knossos-project/knossos/releases/download/nightly/linux.KNOSSOS.nightly.AppImage
+mac-url: https://github.com/knossos-project/knossos/releases/download/nightly/macos.KNOSSOS.nightly.app.zip
