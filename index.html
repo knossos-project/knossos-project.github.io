@@ -232,8 +232,10 @@ layout: knossos
 				{% for member in site.data.members %}
 				<div class="member" data-cell data-vbox="small">
 					<img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
-					<h3>{{ member.name }}</h3>
-					<p>{{ member.description }}</p>
+					<div>
+						<h3>{{ member.name }}</h3>
+						<p>{{ member.description }}</p>
+					</div>
 				</div>
 				{% endfor %}
 			</div>
