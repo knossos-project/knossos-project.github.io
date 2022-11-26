@@ -1,99 +1,221 @@
 ---
-layout: default
+layout: knossos
 ---
 
-<div class="snackbar">
-	<span class="label"><i class="fa fa-birthday-cake" aria-hidden="true"></i> KNOSSOS 5.1 has been released! <i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
-	<a class="action-btn" href="{{ site.data.knossos.release-url }}">Download</a>
-	<a class="dismiss-btn" href="#/">Dismiss</a>
-</div>
-
-<nav class="header-nav row row--no-wrap">
-	<a class="header-nav__toggle row__col" href="#nav"><i class="fa fa-bars" aria-hidden="true"></i>&nbsp;Navigation</a>
-	{% include nav.html %}
+<nav class="header-nav">
+	<input type="checkbox" id="toggle">
+	<label for="toggle">{% include feather/menu.svg %} Navigation</label>
+	<a href="#Banner">{% include feather/home.svg %} Home</a>
+	<a href="#FeaturesSection">{% include feather/grid.svg %} Features</a>
+	<a href="#GettingStartedSection">{% include feather/compass.svg %} Getting Started</a>
+	<a href="#DevelopmentSection">{% include feather/info.svg %} Help & Contribute</a>
+	<a href="#TeamSection">{% include feather/users.svg %} About us</a>
 </nav>
 
-<header id="Banner" class="banner -no-rhythm -text-center">
-	<nav class="nav row -center">
-		{% include nav.html %}
+<header id="Banner" class="banner _text-center _Px" data-alignment="center">
+	<nav class="nav container">
+		<a href="#Banner">{% include feather/home.svg %} Home</a>
+		<a href="#FeaturesSection">{% include feather/grid.svg %} Features</a>
+		<a href="#GettingStartedSection">{% include feather/compass.svg %} Getting Started</a>
+		<a href="#DevelopmentSection">{% include feather/info.svg %} Help & Contribute</a>
+		<a href="#TeamSection">{% include feather/users.svg %} About us</a>
 	</nav>
 
-	<div class="container -center row row--middle">
-		<div class="row__col">
-			<section>
-				<h1>KNOSSOS</h1>
-				<p class="byline">3D Image Visualization and Annotation</p>
+	<div class="container" data-vbox="large">
+		<section data-alignment="center" data-vbox>
+			<h1>KNOSSOS</h1>
 
-				<ul class="list--horizontal">
-					<li><a
-						href="{{ site.data.knossos.win-url }}"
-						class="button button--primary" data-button="download"><i class="fa fa-windows"></i> Latest
-						Release ({{ site.data.knossos.version }}, 64bit)</a></li>
+			<p class="byline">3D Image Visualization and Annotation</p>
 
-					<li><a href="#GettingStartedSection" class="button"><i class="fa fa-download"></i> Download Dataset</a></li>
+			<ul class="actions container -small">
+				<li><a href="{{ site.data.knossos.win-url }}" class="button button--primary" data-button="download"><span data-os="windows">{% include icons/windows.svg %}</span><span data-os="linux" style="display: none;">{% include icons/linux.svg %}</span><span data-os="macos" style="display: none;">{% include icons/apple.svg %}</span> Latest Release ({{ site.data.knossos.version }}, 64bit)</a></li>
 
-					<li><a href="{{ 'documentation/' | prepend: site.baseurl }}" class="button"><i class="fa fa-book"></i> Documentation</a></li>
+				<li><a href="#GettingStartedSection" class="button">{% include feather/download.svg %} Download Dataset</a></li>
 
-					<li><a href="#DevelopmentSection" class="button button--purple"><i class="fa fa-lightbulb-o"></i> Help & Contribute</a></li>
-				</ul>
+				<li><a href="{% link documentation/index.md %}" class="button">{% include feather/book-open.svg %} Documentation</a></li>
 
-				<sub>Not your system? <a href="https://github.com/knossos-project/knossos/releases/latest">Click here</a></sub>
-			</section>
+				<li><a href="#DevelopmentSection" class="button button--purple">{% include feather/info.svg %} Help & Contribute</a></li>
+			</ul>
 
-			<section>
-				<div class="browser-mockup -center">
-					<div class="browser-mockup__chrome"></div>
-					<img src="{{ 'images/KNOSSOS.jpg' | prepend: site.baseurl }}" alt="KNOSSOS Application Window">
-				</div>
-			</section>
+			<sub>Not your system? <a href="https://github.com/knossos-project/knossos/releases/latest">Click here</a></sub>
+		</section>
+
+		<div class="browser-mockup -center">
+			<div class="browser-mockup__chrome"></div>
+			<img src="{{ 'images/KNOSSOS.jpg' | prepend: site.baseurl }}" alt="KNOSSOS Application Window">
 		</div>
 	</div>
 </header>
 
-<section id="AboutSection" class="content content--style1">
-	<div class="container--medium -center">
-		{% capture about %}{% include about.md%}{% endcapture %}
-		{{ about | markdownify }}
+<section id="AboutSection" class="content -style1" data-alignment="center">
+	<div class="container -medium _Px _Py" data-vbox>
+		<header class="major">
+			<h2>{% include feather/help-circle.svg %} What is KNOSSOS</h2>
+		</header>
+
+		<p><strong>KNOSSOS</strong> visualizes large 3D (up to multiple terabyte) volume electron microscopic (e.g. Serial Block-Face EM) datasets by displaying slices. It supports skeleton and volume-based annotation modes, which can be extended by plugins written in Python.</p>
+
+		<p>It is developed at the <em>Max Planck Institute for Medical Research</em> in Heidelberg, Germany, for Windows, GNU/Linux and OS X. A similar, web-based implementation is being developed at <a href="https://webknossos.org">webknossos.org</a>.</p>
+
+		<p>Take a look at KNOSSOS’ features to learn more about it.</p>
 	</div>
 </section>
 
-<section id="FeaturesSection" class="content content--no-padding content--style2">
-	{% include features.html %}
+<section id="FeaturesSection" class="content -style2">
+	<div data-grid class="_gapless" columns-s="1">
+		<div data-cell>
+			<div data-vbox>
+				<h3>3D Visualization</h3>
+
+				<p>3D visualization of image datasets is done by displaying a 2D representation of each side, and allowing you to navigate through these image planes. By dynamically loading only data from the surrounding of the current location, seamless navigation is not limited to datasets that fit into the available RAM but also works with much larger datasets stored in <strong>KNOSSOS&rsquo;</strong> special format on disk.</p>
+			</div>
+		</div>
+
+		<div data-cell>
+			<div>
+				<img src="{{ 'images/3d.png' | prepend: site.baseurl }}" alt="KNOSSOS 3D Visualization Example">
+			</div>
+		</div>
+	</div>
+
+	<div data-grid class="_gapless" columns-s="1">
+		<div data-cell>
+			<div data-vbox>
+				<h3>3D Annotation</h3>
+
+				<p><strong>KNOSSOS</strong> supports two annotation methods&mdash;skeletonization as well as 3D segmentation for volume reconstruction. Skeletonization is done by placing and connecting nodes, while <strong>KNOSSOS&rsquo;</strong> segmentation mode allows manual processing of pre-segmented data, and creation of new segmentations from scratch.</p>
+				
+				<p>These features are already being used at <em>Max Planck Institute for Medical Research</em> (among others), where mice retina was successfully reconstructed.</p>
+			</div>
+		</div>
+
+		<div data-cell>
+			<div>
+				<img src="{{ 'images/segmentation.png' | prepend: site.baseurl }}" alt="KNOSSOS Segmentation Example">
+			</div>
+		</div>
+	</div>
+
+	<div data-grid class="_gapless" columns-s="1">
+		<div data-cell>
+			<div data-vbox>
+				<h3>Extendable</h3>
+
+				<p>You can enhance <strong>KNOSSOS&rsquo;</strong> annotation features by writing Python plugins, and we also provide a Python script that helps you to convert your existing image data into a <strong>KNOSSOS</strong>-readable format.</p>
+			</div>
+		</div>
+
+		<div data-cell class="GitHubBackground">
+			<div data-vbox>
+				<h3>Open Source & Cross-Platform</h3>
+
+				<p><strong>KNOSSOS</strong> is developed using the <em>Qt5</em> toolkit, and available on all major platforms. You can help the development of <strong>KNOSSOS</strong> by submitting bugs and other suggestions at <a href="https://github.com/knossos-project/knossos/issues">Github&rsquo;s issue tracker <i class="fa fa-external-link"></i></a> or by contacting us directly.</p>
+			</div>
+
+			{% include icons/github-alt.svg %}
+		</div>
+	</div>
 </section>
 
-<section id="PapersSection" class="content content--style2">
-	{% include papers.html %}
-</section>
-
-<section id="GettingStartedSection" class="content content--style1">
-	{% include getting-started.html %}
-</section>
-
-<section id="DevelopmentSection" class="content content--style2">
-	<div class="container--large -center">
+<section id="PapersSection" class="content -style2" data-alignment="center">
+	<div class="container _Px _Pt">
 		<header class="major">
-			<h2>Help & Contribute<span class="__icon"><i class="fa fa-lightbulb-o"></i></span></h2>
+			<h2>KNOSSOS<br>References</h2>
 		</header>
 
-		<div class="row row--gutter row--start">
-			<div class="row__col box box--special">
-				<h5>Bug Reports & Feature Requests</h5>
+		<div class="PapersTable">
+			<table>
+				<thead>
+					<tr>
+						<th>Date of Publication</th>
+						<th>Title of Publication</th>
+						<th>DOI Link</th>
+					</tr>
+				</thead>
+
+				{% for paper in site.data.papers %}
+				<tr>
+					<td><date>{{ paper.date }}</date></td>
+
+					<td>{{ paper.title }}</td>
+
+					<td><a href="{{ paper.doi }}">{{ paper.doi }}</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+
+		<p><strong>Your paper?</strong> <em>If you think KNOSSOS might be useful for your research, feel free to <a href="mailto:knossosteam@gmail.com">contact us</a>. We are happy to exchange ideas and to provide assistance!</em></p>
+	</div>
+</section>
+
+<section id="GettingStartedSection" class="content -style1" data-alignment="center">
+	<div class="container _Px _Py" data-alignment="center" data-vbox>
+		<header class="major">
+			<h2>{% include feather/compass.svg %} Getting started</h2>
+		</header>
+
+		<div data-vbox="medium">
+			<div data-vbox>
+				<p>A special image format is required to use <strong>KNOSSOS.</strong> You have the choice to either try our example datasets, or learn how to create your own.</p>
+
+				<p>The built-in datasets are called <code>e2006</code>, <code>ek0563</code>, and <code>j0256</code>.</p>
+
+				<p>An external dataset can be loaded into <strong>KNOSSOS</strong> by selecting its <code>.conf</code> file in <span class="menuselection"><span class="guilabel">File</span>▸<span class="guilabel">Choose Dataset...</span></span>, and clicking on <span class="guilabel">Use</span>.</p>
+			</div>
+
+			<div data-grid columns-s="1">
+				<div class="box" data-vbox="small">
+					<h3>Own Datasets</h3>
+
+					<p>If you have your own image datasets, they will probably need to be converted into <strong>KNOSSOS’</strong> format. Take a look at our documentation to learn how to do so.</p>
+
+					<ul class="actions">
+						<li><a class="button button--small" href="{% link documentation/index.md %}">Documentation</a></li>
+						<li><a class="button button--small" href="{% link documentation/dataset-preparation.md %}">Dataset Preparation</a></li>
+					</ul>
+				</div>
+
+				<div class="box" data-vbox="small">
+					<h3>Offline Datasets</h3>
+
+					<p>These are offline datasets that already contain all pre-formatted images:</p>
+
+					<ul class="actions">
+						<li><a class="button button--small" href="https://github.com/knossos-project/knossos-project.github.io/releases/download/host/e1088_small.zip">small (14 MiB)</a></li>
+						<li><a class="button button--small" href="https://github.com/knossos-project/knossos-project.github.io/releases/download/host/e1088_large.zip">large (369 MiB)</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="DevelopmentSection" class="content -style2" data-alignment="center">
+	<div class="container _Px _Py">
+		<header class="major">
+			<h2>{% include feather/info.svg %} Help & Contribute</h2>
+		</header>
+
+		<div class="_fit-height" data-grid columns="1" columns-l="3">
+			<div class="box box--special" data-vbox="small">
+				<h3>Bug Reports & Feature Requests</h3>
 
 				<p><strong>KNOSSOS</strong> is being actively maintained to provide a useful tool to the study of connectomics. If you miss a feature that would make <strong>KNOSSOS</strong> more useful for your research, please tell us on our <a href="https://github.com/knossos-project/knossos/issues">issue tracker on GitHub <i class="fa fa-external-link"></i></a> or <a href="mailto:knossosteam@gmail.com">via e-mail</a>.</p>
 
 				<p>If you encounter any bugs while using <strong>KNOSSOS</strong>, please tell us as well.</p>
 			</div>
 
-			<div class="row__col box box--special">
-				<h5>Integrating KNOSSOS</h5>
+			<div class="box box--special" data-vbox="small">
+				<h3>Integrating KNOSSOS</h3>
 
 				<p><strong>KNOSSOS</strong> can be integrated into your existing workflow, either by using the main program or its Python plugin interface.</p>
 
 				<p>You can contact us if you need help in writing Python plugins for <strong>KNOSSOS</strong> or if you have an idea how to improve <strong>KNOSSOS’</strong> integration with your workflow.</p>
 			</div>
 
-			<div class="row__col box box--purple">
-				<h5>General Assistance</h5>
+			<div class="box box--purple" data-vbox="small">
+				<h3>General Assistance</h3>
 
 				<p>We want to work closely together with other research teams in the connectomics field. Feel free to <a href="mailto:knossosteam@gmail.com">contact us</a> if you need any technical assistance in this area or if you want to exchange ideas.</p>
 			</div>
@@ -101,9 +223,37 @@ layout: default
 	</div>
 </section>
 
-<section id="TeamSection" class="content content--style2">
-	<div class="container--large -center">
-		{% capture team %}{% include team.md %}{% endcapture %}
-		{{ team | markdownify }}
+<section id="TeamSection" class="content -style2" data-alignment="center">
+	<div class="container _Px _Py" data-vbox>
+		<header class="major">
+			<h2>{% include feather/users.svg %} About us</h2>
+		</header>
+
+		<div data-vbox="medium">
+			<p>KNOSSOS is developed by a global team of open source contributors — get in touch with us if you want to help!</p>
+
+			<div data-grid columns-s="1">
+				{% for member in site.data.members %}
+				<div class="member" data-cell data-vbox="small">
+					<img class="-circle" src="{{ site.baseurl }}images/team/{{ member.picture }}" alt="{{ member.description }}" width="200" height="200">
+					<h3>{{ member.name }}</h3>
+					<p>{{ member.description }}</p>
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		<h3>Contributors</h3>
+
+		<p>We would like to thank the following persons for their contributions towards KNOSSOS:</p>
+
+		<p>{% for member in site.data.contributors %}{% assign loopindex = forloop.index %}{{ member.name }}{% if forloop.last != true %}, {% endif %}{% endfor %}</p>
+
+		<h3>Contact us</h3>
+
+		<p>If you have any questions or suggestions regarding KNOSSOS, feel free to write us:</p>
+
+		<p><a href="mailto:knossosteam@gmail.com" class="button button--small">{% include feather/mail.svg %} knossosteam@gmail.com</a></p>
 	</div>
 </section>

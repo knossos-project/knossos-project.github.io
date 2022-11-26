@@ -38,18 +38,20 @@
 	});
 
 	// Change Download button depending on operating system.
-	const $button_icon = document.querySelector("[data-button='download'] > i");
+	const $windowsIcon = document.querySelector("[data-os='windows']");
+	const $linuxIcon = document.querySelector("[data-os='linux']");
+	const $macosIcon = document.querySelector("[data-os='macos']");
 	const $button = document.querySelector("[data-button='download']")
 
 	if (navigator.userAgent.indexOf("Macintosh") > -1) {
-		$button_icon.classList.remove("fa-windows");
-		$button_icon.classList.add("fa-apple");
+		$windowsIcon.style.display = "none";
+		$macosIcon.style.display = "inline";
 		$button.setAttribute("href", "{{ site.data.knossos.mac-url }}");
 	}
 
 	if (navigator.userAgent.indexOf("Linux") > -1) {
-		$button_icon.classList.remove("fa-windows");
-		$button_icon.classList.add("fa-linux");
+		$windowsIcon.style.display = "none";
+		$linuxIcon.style.display = "inline";
 		$button.setAttribute("href", "{{ site.data.knossos.linux-url }}");
 	}
 })();

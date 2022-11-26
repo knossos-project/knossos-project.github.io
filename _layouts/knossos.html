@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{ site.name }} — 3D Image Annotation</title>
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+	<style>
+		{% capture include_to_scssify %}
+			{% include main.scss %}
+		{% endcapture %}
+		{{ include_to_scssify | scssify }}
+	</style>
+</head>
+
+<body>
+	{{ content }}
+
+	<footer class="footer" data-alignment="center">
+		<div class="container _Px" data-grid columns-s="1" columns-l="5">
+			<div data-vbox data-cell>
+				<p class="heading">Navigation</p>
+
+				<ul data-vbox="small">
+					<li><a href="#Banner">Home</a></li>
+					<li><a href="#FeaturesSection">Features</a></li>
+					<li><a href="#GettingStartedSection">Getting Started</a></li>
+					<li><a href="#DevelopmentSection">Help & Contribute</a></li>
+					<li><a href="#TeamSection">About us</a></li>
+				</ul>
+			</div>
+
+			<div data-vbox data-cell>
+				<p class="heading">Documentation</p>
+
+				<ul data-vbox="small">
+					<li><a href="{% link documentation/dataset-preparation.md %}">Data Preparation</a></li>
+					<li><a href="{% link documentation/quickstart.md %}">KNOSSOS Quickstart Guide</a></li>
+					<li><a href="{% link documentation/index.md %}">KNOSSOS Full Documentation</a></li>
+				</ul>
+			</div>
+
+			<div data-vbox data-cell>
+				<p class="heading">Contribute</p>
+
+				<ul data-vbox="small">
+					<li><a href="https://github.com/knossos-project/knossos">GitHub Repository</a></li>
+					<li><a href="https://github.com/knossos-project/knossos/issues">Issue Tracker</a></li>
+				</ul>
+			</div>
+
+			<div data-vbox data-cell>
+				<p class="heading">Network</p>
+
+				<ul data-vbox="small">
+					<li><a href="https://www.mr.mpg.de/en">Max Planck Institute for Medical Research</a> (Heidelberg, Germany)</li>
+					<li><a href="https://www.neuro.mpg.de/en">Max Planck Institute of Neurobiology</a> (Munich, Germany)</li>
+					<li><a href="https://webknossos.org">webKnossos</a></li>
+				</ul>
+			</div>
+
+			<div data-vbox data-cell>
+				<p class="heading">Back to Top</p>
+
+				<a class="circle-icon" href="#Banner">{% include feather/chevron-up.svg %}</a>
+			</div>
+		</div>
+
+		<div class="footer__footer" data-alignment="center">
+			<p class="container _Px">KNOSSOS is developed at <a href="https://www.mpimf-heidelberg.mpg.de/en">Max Planck Institute for Medical Research <i class="fa fa-external-link"></i></a> in Heidelberg, Germany.</p>
+		</div>
+	</footer>
+
+	<script src="{{ 'js/main.js' | prepend: site.baseurl }}"></script>
+</body>
+</html>

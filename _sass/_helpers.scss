@@ -1,0 +1,14 @@
+._text-center {text-align: center; }
+
+._Px {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+._Pt {padding-top: 4em; }
+._Py {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+._gapless {grid-gap: 0; }
+._fit-height > * {height: fit-content; }
