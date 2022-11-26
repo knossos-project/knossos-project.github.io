@@ -8,8 +8,11 @@ baseurl: ""
 url: "https://knossos.app"
 github_username:  knossos-project
 
+plugins:
+  - jekyll-remote-theme
+
 # Build settings
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 kramdown:
   parse_block_html: true
 
